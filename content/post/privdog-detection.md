@@ -1,0 +1,55 @@
++++
+title = "privdog detection"
+date = "2015-02-23"
+slug = "2015/02/23/privdog-detection"
+Categories = []
++++
+In much the same way as I was <a href="http://blog.squarelemon.com/blog/2015/02/20/superfish-detection/">able to detect hosts infected with SuperFish</a> by profiling the changes in Cipher Suites used in their SSL connections (by virtue of SuperFish essentially having it's own SSL client) I have been able to create a fingerprint for PrivDog.  For those who are interested, the ciphersuites used by the PrivDog client are:<!-- More -->
+
+		Cipher Suites (44 suites)
+			Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014)
+			Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA (0xc00a)
+			Cipher Suite: TLS_SRP_SHA_DSS_WITH_AES_256_CBC_SHA (0xc022)
+			Cipher Suite: TLS_SRP_SHA_RSA_WITH_AES_256_CBC_SHA (0xc021)
+			Cipher Suite: TLS_DHE_RSA_WITH_AES_256_CBC_SHA (0x0039)
+			Cipher Suite: TLS_DHE_DSS_WITH_AES_256_CBC_SHA (0x0038)
+			Cipher Suite: TLS_ECDH_RSA_WITH_AES_256_CBC_SHA (0xc00f)
+			Cipher Suite: TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA (0xc005)
+			Cipher Suite: TLS_RSA_WITH_AES_256_CBC_SHA (0x0035)
+			Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (0xc013)
+			Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA (0xc009)
+			Cipher Suite: TLS_SRP_SHA_DSS_WITH_AES_128_CBC_SHA (0xc01f)
+			Cipher Suite: TLS_SRP_SHA_RSA_WITH_AES_128_CBC_SHA (0xc01e)
+			Cipher Suite: TLS_DHE_RSA_WITH_AES_128_CBC_SHA (0x0033)
+			Cipher Suite: TLS_DHE_DSS_WITH_AES_128_CBC_SHA (0x0032)
+			Cipher Suite: TLS_ECDH_RSA_WITH_AES_128_CBC_SHA (0xc00e)
+			Cipher Suite: TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA (0xc004)
+			Cipher Suite: TLS_RSA_WITH_AES_128_CBC_SHA (0x002f)
+			Cipher Suite: TLS_ECDHE_RSA_WITH_RC4_128_SHA (0xc011)
+			Cipher Suite: TLS_ECDHE_ECDSA_WITH_RC4_128_SHA (0xc007)
+			Cipher Suite: TLS_ECDH_RSA_WITH_RC4_128_SHA (0xc00c)
+			Cipher Suite: TLS_ECDH_ECDSA_WITH_RC4_128_SHA (0xc002)
+			Cipher Suite: TLS_RSA_WITH_RC4_128_SHA (0x0005)
+			Cipher Suite: TLS_RSA_WITH_RC4_128_MD5 (0x0004)
+			Cipher Suite: TLS_DHE_RSA_WITH_SEED_CBC_SHA (0x009a)
+			Cipher Suite: TLS_DHE_DSS_WITH_SEED_CBC_SHA (0x0099)
+			Cipher Suite: TLS_RSA_WITH_SEED_CBC_SHA (0x0096)
+			Cipher Suite: TLS_DHE_RSA_WITH_DES_CBC_SHA (0x0015)
+			Cipher Suite: TLS_DHE_DSS_WITH_DES_CBC_SHA (0x0012)
+			Cipher Suite: TLS_RSA_WITH_DES_CBC_SHA (0x0009)
+			Cipher Suite: TLS_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA (0x0014)
+			Cipher Suite: TLS_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA (0x0011)
+			Cipher Suite: TLS_RSA_EXPORT_WITH_DES40_CBC_SHA (0x0008)
+			Cipher Suite: TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA (0xc012)
+			Cipher Suite: TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA (0xc008)
+			Cipher Suite: TLS_SRP_SHA_DSS_WITH_3DES_EDE_CBC_SHA (0xc01c)
+			Cipher Suite: TLS_SRP_SHA_RSA_WITH_3DES_EDE_CBC_SHA (0xc01b)
+			Cipher Suite: TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA (0x0016)
+			Cipher Suite: TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA (0x0013)
+			Cipher Suite: TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA (0xc00d)
+			Cipher Suite: TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA (0xc003)
+			Cipher Suite: TLS_RSA_WITH_3DES_EDE_CBC_SHA (0x000a)
+			Cipher Suite: TLS_RSA_WITH_IDEA_CBC_SHA (0x0007)
+			Cipher Suite: TLS_EMPTY_RENEGOTIATION_INFO_SCSV (0x00ff)
+
+I have updated my <a href="https://github.com/LeeBrotherston/snort/blob/master/snort_interception.rules">Interception Snort Rules</a> to include this.

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    
+    <title>SquareLemon</title>
+
+    
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    
+    
+
+    <style>
+	body {
+		background: #52bee2;
+		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-size: 14px;
+		color: #000;
+		line-height: 1.5;
+	}
+	h1, h2, h3, h4 {
+		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		color: #000;
+	}
+	h1 {
+		font-size: 50px;
+	}
+	h2 {
+		font-size: 40px;
+	}
+	h3 {
+		font-size: 30px;
+	}
+	h4 {
+		font-size: 20px;
+		padding-top: 20px;
+	}
+	a {
+		color: #FF7056;
+	}
+	div {
+		border-radius: 15px;
+	}
+	code {
+		font-family: bold "Courier New", Courier, monospace;
+		color: black;
+		background: lightblue;
+	}
+	blockquote {
+	  font-family: Verdana, Geneva, sans-serif;
+	  border-left: 10px solid #000;
+	  margin: 1.5em 10px;
+	  padding: 0.5em 10px;
+	  quotes: "\201C""\201D""\2018""\2019";
+	}
+	blockquote:before {
+	  color: #000;
+	  content: open-quote;
+	  font-size: 4em;
+	  line-height: 0.1em;
+	  margin-right: 0.25em;
+	  vertical-align: -0.4em;
+	}
+	blockquote p {
+		  display: inline;
+	}
+	.post-meta {
+		color: grey;
+		font-style: italic;
+	}
+	@media (max-width: 992px) {
+	    h1 {
+		font-size: 20px;
+	    }
+	    body {
+		font-size: 16px;
+	    }
+
+	}
+    </style>
+  </head>
+  <body>
+
+  
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3" style="text-align: right;">
+                <h1>SquareLemon Blog</h1>
+                
+
+    </div>
+  </div>
+
+
+
+	
+  
+  <div class="row">
+	<br />
+  </div>
+
+  
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3" style="background: #AEE5F7; border-color: white; border-style: solid;">
+	  <a href="/2014/07/is-your-eula-lowering-your-application-security/">
+        <h2>is your eula lowering your application security</h2> 
+          	    
+      </a>
+      <p class="post-meta">Posted on July 18, 2014</p>
+		<p>A couple of days ago I tweeted this:</p>
+
+<p><center>
+<blockquote class="twitter-tweet" lang="en"><p>I&#39;m pretty sure when your EULA prohibits reverse engineering your software, all you prevent is people telling you that they reversed it.</p>&mdash; leE Brotherston (@leEb_public) <a href="https://twitter.com/leEb_public/statuses/489050821649506304">July 15, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center></p>
+
+<p>Quite a lot of people agreed (at the time of writing it has 40 retweets and 19 favourites, which is quite a lot for me), so I thought that I would expand and explain this in a little more detail.<!-- More --></p>
+
+<p>The End User Licence Agreement (EULA) is something which is fairly common inclusion in commercial applications, and is typically something dreamed up by the legal team to attempt to enforce whatever it is that they feel needs to be added as part of the licencing agreement.  What prompted my particular comment was something I noticed in the EULA of an application I was using, which prohibited the user from being able to:</p>
+
+<blockquote>
+<p>&ldquo;copy, distribute, publish, reverse engineer, decompile, disassemble, modify, or translate the Software&rdquo;</p>
+</blockquote>
+
+<p>A <a href="https://duckduckgo.com/?q=%22copy%2C+distribute%2C+publish%2C+reverse+engineer%2C+decompile%2C+disassemble%2C+modify%2C+or+translate+the+Software%22">quick search</a> seems to indicate that this is a fairly common clause in a number of EULAs, particularly in the world of gambling (maybe they all use the same template or legal team).</p>
+
+<p>My assumption is that this clause is included in order to prevent people from creating clone clients, perhaps ones which automate betting and casino style gambling, laundering via robot card games or perhaps just an attempt to hide flaws in the application stack somewhere.</p>
+
+<p>My initial thought was merely that this would not prevent anyone with ill intentions from reversing the code.  People who are willing to use an application or service for fraudulent means are probably committing crimes such as fraud in the process, if they&rsquo;re able to accept that I don&rsquo;t believe that a licence violation will be a massive disincentive.</p>
+
+<p>Similarly if people are not comitting a crime like fraud or money laundering, but are using automated tools to game the system by autmatically playing low-winning games for hours on end, for example, probably don&rsquo;t care about the EULA too much.</p>
+
+<p>Finally, those who are seeking to reverse engineer the code to find exploits and attack the system in some way (ok this is also crime, but a different type) probably will not care about the EULA.</p>
+
+<p>However&hellip;</p>
+
+<p>Security researchers, for example, <b>are</b> likely to be dissuaded from taking a closer look at an application by a restrictive EULA, but they are the very people that we do not want to be dissuaded.  We want these people to find the problems and report them responsibly.  In a perfect world you would have a bug bounty program like those at <a href="https://www.etsy.com/ca/help/article/2463">Etsy</a>, <a href="https://www.facebook.com/whitehat">Facebook</a> and <a href="http://technet.microsoft.com/en-us/security/dn425036">Microsoft</a> to incentivize people to disclose bugs early and often.  But even without a formal bug bounty program in place dissuading researchers via the EULA could well lower your security posture.  Chances are that a resrictive EULA has just cut off their only option to report it to you responsibly without fear of some knee-jerk legal retaliation.  Instead, as <a href="https://twitter.com/essobi">@esSOBI</a> rightly points out:</p>
+
+<p><center>
+<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/leEb_public">@leEb_public</a> <a href="https://twitter.com/thegrugq">@thegrugq</a> &#10;Do you want to wind up on pastebin? Cause that&#39;s how you wind up on pastebin.</p>&mdash; esSOBi (@essobi) <a href="https://twitter.com/essobi/statuses/489109019878248448">July 15, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center></p>
+
+<p>Perhaps it&rsquo;s time Information Security people engaged with Legal instead of dismissing the EULA on your product as &ldquo;business stuff&rdquo; and make sure that it isn&rsquo;t damaging your chances at a more secure product.</p>
+
+      <br /><br />
+    </div>
+  </div>
+
+  <br /><br />
+
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+	
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-54930700-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+
+
+  </body>
+</html>
+

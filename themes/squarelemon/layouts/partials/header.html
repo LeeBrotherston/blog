@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>SquareLemon</title>
+
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+	body {
+		background: #52bee2;
+		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-size: 14px;
+		color: #000;
+		line-height: 1.5;
+	}
+	h1, h2, h3, h4 {
+		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		color: #000;
+	}
+	h1 {
+		font-size: 50px;
+	}
+	h2 {
+		font-size: 40px;
+	}
+	h3 {
+		font-size: 30px;
+	}
+	h4 {
+		font-size: 20px;
+		padding-top: 20px;
+	}
+	a {
+		color: #FF7056;
+	}
+	div {
+		border-radius: 15px;
+	}
+	code {
+		font-family: bold "Courier New", Courier, monospace;
+		color: black;
+		background: lightblue;
+	}
+	blockquote {
+	  font-family: Verdana, Geneva, sans-serif;
+	  border-left: 10px solid #000;
+	  margin: 1.5em 10px;
+	  padding: 0.5em 10px;
+	  quotes: "\201C""\201D""\2018""\2019";
+	}
+	blockquote:before {
+	  color: #000;
+	  content: open-quote;
+	  font-size: 4em;
+	  line-height: 0.1em;
+	  margin-right: 0.25em;
+	  vertical-align: -0.4em;
+	}
+	blockquote p {
+		  display: inline;
+	}
+	.post-meta {
+		color: grey;
+		font-style: italic;
+	}
+	@media (max-width: 992px) {
+	    h1 {
+		font-size: 20px;
+	    }
+	    body {
+		font-size: 16px;
+	    }
+
+	}
+    </style>
+  </head>
+  <body>
+
+  <!-- Title area -->
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3" style="text-align: right;">
+                <h1>{{.Site.Title}}</h1>
+                {{if .Site.Params.subtitle}}
+                  <hr class="small">
+                  <span class="page-subheading">{{.Site.Params.subtitle}}</span>
+                {{end}}
+
+    </div>
+  </div>

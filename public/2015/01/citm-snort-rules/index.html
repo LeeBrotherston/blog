@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    
+    <title>SquareLemon</title>
+
+    
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    
+    
+
+    <style>
+	body {
+		background: #52bee2;
+		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-size: 14px;
+		color: #000;
+		line-height: 1.5;
+	}
+	h1, h2, h3, h4 {
+		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		color: #000;
+	}
+	h1 {
+		font-size: 50px;
+	}
+	h2 {
+		font-size: 40px;
+	}
+	h3 {
+		font-size: 30px;
+	}
+	h4 {
+		font-size: 20px;
+		padding-top: 20px;
+	}
+	a {
+		color: #FF7056;
+	}
+	div {
+		border-radius: 15px;
+	}
+	code {
+		font-family: bold "Courier New", Courier, monospace;
+		color: black;
+		background: lightblue;
+	}
+	blockquote {
+	  font-family: Verdana, Geneva, sans-serif;
+	  border-left: 10px solid #000;
+	  margin: 1.5em 10px;
+	  padding: 0.5em 10px;
+	  quotes: "\201C""\201D""\2018""\2019";
+	}
+	blockquote:before {
+	  color: #000;
+	  content: open-quote;
+	  font-size: 4em;
+	  line-height: 0.1em;
+	  margin-right: 0.25em;
+	  vertical-align: -0.4em;
+	}
+	blockquote p {
+		  display: inline;
+	}
+	.post-meta {
+		color: grey;
+		font-style: italic;
+	}
+	@media (max-width: 992px) {
+	    h1 {
+		font-size: 20px;
+	    }
+	    body {
+		font-size: 16px;
+	    }
+
+	}
+    </style>
+  </head>
+  <body>
+
+  
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3" style="text-align: right;">
+                <h1>SquareLemon Blog</h1>
+                
+
+    </div>
+  </div>
+
+
+
+	
+  
+  <div class="row">
+	<br />
+  </div>
+
+  
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3" style="background: #AEE5F7; border-color: white; border-style: solid;">
+	  <a href="/2015/01/citm-snort-rules/">
+        <h2>citm snort rules</h2> 
+          	    
+      </a>
+      <p class="post-meta">Posted on January 27, 2015</p>
+		<p>Last year I gave my Corporation In The Middle talk in which I explained how my ISP has been man-in-the-middle&rsquo;ing my connection to inject a warning banner into the top of webpages I visited (talk content <a href="blog.squarelemon.com/blog/2014/10/29/corporation-in-the-middle/">here</a> and <a href="http://blog.squarelemon.com/blog/2014/12/29/bsides-toronto-video-and-slides/">here</a>).</p>
+
+<p>Part of this involved traffic analysis to discover artifacts of the injection process.  In an effort to make this process more automated, repeatable and accessible I have put together a few snort rules to allow others to alert on this condition:<br /></p>
+
+<p><a href="https://github.com/LeeBrotherston/snort">https://github.com/LeeBrotherston/snort</a><br /></p>
+
+<p>One rule is commented out as it is noisy and prone to false positives, however I have included it (disabled) for now, for reference.  The other three rules have been tested by me on my personal environment and seem to be free from false positives, however this is only a limited test and so feedback would be really appreciated from anyone running them elsewhere.<br /></p>
+
+<p>Of course these are far from complete in terms of detection of man in the middle generically, they only pertain to the specific technique outlined in my talk, however I will endeavour to update them as I obtain further information.</p>
+
+      <br /><br />
+    </div>
+  </div>
+
+  <br /><br />
+
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+	
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-54930700-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+
+
+  </body>
+</html>
+

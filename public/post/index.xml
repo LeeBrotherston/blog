@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on SquareLemon Blog</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on SquareLemon Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 09 Nov 2016 23:49:16 -0500</lastBuildDate>
+    <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Use Signal, Use Tor</title>
+      <link>/2016/11/use-signal-use-tor/</link>
+      <pubDate>Wed, 09 Nov 2016 23:49:16 -0500</pubDate>
+      
+      <guid>/2016/11/use-signal-use-tor/</guid>
+      <description>&lt;p&gt;At times when people are likely to be out protesting or performing acts of civil disobedience all the advice comes out about how to conduct good OPSEC.  Some advice is good, some is bad, some is well intentioned, and some it just dangerous.&lt;/p&gt;
+
+&lt;p&gt;We often hear &lt;i&gt;&amp;quot;Use &lt;a href=&#34;https://whispersystems.org/&#34;&gt;signal&lt;/a&gt;, use &lt;a href=&#34;https://www.torproject.org/&#34;&gt;tor&lt;/a&gt;&amp;quot;&lt;/i&gt; mentioned.  It has become a mantra uttered both ironically and unironically as the goto advice from a number of people.  But this lacks context, nuance, and a key bit of information (in infosec, shocking, I know!).  To clarify, here&amp;rsquo;s the advice that I give summarised to twitter length:&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;As a reminder when you “use tor, use signal”, it doesn’t hide that you are using tor and using signal.&lt;/p&gt;&amp;mdash; leE Brotherston (@synackpse) &lt;a href=&#34;https://twitter.com/synackpse/status/796387726299951105&#34;&gt;November 9, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SecTor 2016 Presentation</title>
+      <link>/2016/10/sector-2016-presentation/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/2016/10/sector-2016-presentation/</guid>
+      <description>&lt;p&gt;A week ago I gave my talk &amp;ldquo;[Ab]Using TLS for Defensive Wins&amp;rdquo; at &lt;a href=&#34;http://sector.ca&#34;&gt;SecTor 2016&lt;/a&gt;.  Here is my little blurb:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;TLS, and it’s older forerunner SSL, are used to maintain the confidentiality
+and integrity of network communications. This is a double edged sword for
+Information Security departments as this allows private information to remain
+private, but can also be used to hide malicious activity.&lt;/p&gt;
+
+&lt;p&gt;Current defensive measures for dealing with network traffic encrypted using TLS
+typically takes one of two forms; attempting to detect malicious activities via
+other means which are outside of the encrypted session, such as endpoint
+security tools and IP address blacklists. The other approach is to break the
+TLS trust model by effectively attacking all connections, including trusted
+connections, via MiTM with a trusted certificate.&lt;/p&gt;
+
+&lt;p&gt;This talk discusses the problems with the current state of the art and
+introduces other techniques, such as TLS Fingerprinting and TLS Handshake
+Mangling, which can be used to solve the same problems with less of the issues.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The video is now online:&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe src=&#34;https://player.vimeo.com/video/188841319&#34; width=&#34;640&#34; height=&#34;360&#34; frameborder=&#34;0&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;br /&gt;&lt;br /&gt;
+As are the slides:&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;739241e9ff8a4455885f01894dd62a2e&#34; data-ratio=&#34;1.77777777777778&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FingerPrinTLS Example Use Cases</title>
+      <link>/2016/08/fingerprintls-example-use-cases/</link>
+      <pubDate>Tue, 02 Aug 2016 12:14:52 -0400</pubDate>
+      
+      <guid>/2016/08/fingerprintls-example-use-cases/</guid>
+      <description>&lt;p&gt;I have unbroken my blog, so in preparation for BlackHat Arsenal I have &lt;a href=&#34;/fingerprintls/&#34;&gt;written up a few use cases for FingerPrinTLS&lt;/a&gt;.  The specific examples I have given are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Supplementing IDS&lt;/li&gt;
+&lt;li&gt;Malware hunting and enhancing ThreatIntel(sorry!) Feeds&lt;/li&gt;
+&lt;li&gt;Protecting API endpoints and Web Servers&lt;/li&gt;
+&lt;li&gt;Canaries for Unicorns&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Enjoy!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>things are coming...</title>
+      <link>/2016/01/things-are-coming.../</link>
+      <pubDate>Sat, 09 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/2016/01/things-are-coming.../</guid>
+      <description>&lt;p&gt;I realise that I have not posted for a while, so I just wanted to drop a quick mini-post&amp;rsquo;ette to say that I have been working hard on a number of things to do with my &lt;a href=&#34;/tls-fingerprinting/&#34;&gt;TLS Fingerprinting&lt;/a&gt; side project.  If you keep track of my &lt;a href=&#34;https://github.com/LeeBrotherston/tls-fingerprinting/&#34;&gt;GitHub page&lt;/a&gt; you&amp;rsquo;ll probably see the fruits of my labour first.&lt;br /&gt;
+&lt;br /&gt;
+I&amp;rsquo;m planning on creating a number of posts on using the &lt;a href=&#34;https://github.com/LeeBrotherston/tls-fingerprinting/tree/master/fingerprintls&#34;&gt;FingerPrinTLS tool&lt;/a&gt; once I have a few more key items in.  Since I spoke at DerbyCon and SecTorCA I have introduced a number of new features, including:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;802.1Q support&lt;/li&gt;
+&lt;li&gt;IPv6 support&lt;/li&gt;
+&lt;li&gt;Privilege dropping&lt;/li&gt;
+&lt;li&gt;Timestamps to output&lt;/li&gt;
+&lt;li&gt;Dynamically generate new signatures from unknown connections&lt;/li&gt;
+&lt;li&gt;Binary fingerprint &amp;ldquo;database&amp;rdquo; file as opposed to compiled in fingerprints&lt;/li&gt;
+&lt;li&gt;Cleanups (but more is needed)&lt;/li&gt;
+&lt;li&gt;Database search optimisations&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I&amp;rsquo;m currently working on a few other things (threading, code cleanup, optimisations, etc) then I&amp;rsquo;ll drop some more real-world-useful tutorials.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>tls fingerprinting resources</title>
+      <link>/2015/09/tls-fingerprinting-resources/</link>
+      <pubDate>Fri, 25 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/09/tls-fingerprinting-resources/</guid>
+      <description>&lt;p&gt;Today I gave my talk at &lt;a href=&#34;https://www.derbycon.com&#34;&gt;DerbyCon&lt;/a&gt;, &amp;ldquo;Stealthier Attacks &amp;amp; Smarter Defending with TLS Fingerprinting&amp;rdquo;.  The links to all the resources are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.squarelemon.com/tls-fingerprinting/&#34;&gt;Paper / Post&lt;/a&gt; giving a technical overview of the fingerprinting technique discussed.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.slideshare.net/LeeBrotherston/tls-fingerprinting-stealthier-attacking-smarter-defending-derbycon&#34;&gt;Slides&lt;/a&gt; from the talk, which probably don&amp;rsquo;t make much sense without the talk.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/LeeBrotherston/tls-fingerprinting/&#34;&gt;Tools&lt;/a&gt; discussed during the talk&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Don&amp;rsquo;t forget to join in the conversation on twitter too either to &lt;a href=&#34;https://twitter.com/synackpse&#34;&gt;my account&lt;/a&gt; or the &lt;a href=&#34;https://twitter.com/FingerprinTLS&#34;&gt;FingerprinTLS&lt;/a&gt; account.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Yes, I&#39;ve been quiet</title>
+      <link>/2015/09/yes-ive-been-quiet/</link>
+      <pubDate>Thu, 24 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/09/yes-ive-been-quiet/</guid>
+      <description>&lt;p&gt;I haven&amp;rsquo;t posted for a while, largely because I have been working on some research that I have been doing, and am  presenting at both &lt;a href=&#34;http://www.sector.ca/Program/Sessions/Session-Details/stealthier-attacks-and-smarter-defending-with-tls-fingerprinting&#34;&gt;SecTor&lt;/a&gt; in a few weeks, and &lt;a href=&#34;https://www.derbycon.com&#34;&gt;DerbyCon&lt;/a&gt; tomorrow.  I will be releasing some materials relating to this talk so that people who are not in attendance can obtain the information without having to listen to me on a recording, so if you are interested in TLS Fingerprinting, keep an eye out tomorrow as I will be publishing a longer than normal post with some of the technical details and tools.&lt;/p&gt;
+
+&lt;p&gt;As usual, I&amp;rsquo;m always eager to hear any feedback on my own &lt;a href=&#34;https://twitter.com/synackpse&#34;&gt;twitter account&lt;/a&gt; or via the &lt;a href=&#34;https://twitter.com/FingerprinTLS&#34;&gt;FingerprinTLS&lt;/a&gt; account.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>mitm the mitmers</title>
+      <link>/2015/06/mitm-the-mitmers/</link>
+      <pubDate>Sun, 21 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/06/mitm-the-mitmers/</guid>
+      <description>&lt;p&gt;Last week I mentioned that &lt;a href=&#34;https://www.twitter.com/myrcurial/&#34;&gt;James
+Arlen&lt;/a&gt; and &lt;a href=&#34;https://www.twitter.com/synackpse/&#34;&gt;I&lt;/a&gt; gave the
+&lt;a href=&#34;/blog/2015/06/12/sc-congress-toronto/&#34;&gt;closing keynote at SCCongress
+Toronto&lt;/a&gt;.  We had planned to do a live demo as part of the talk, but after
+reaching the venue and connecting to the wifi we found that it would not work
+as planned, specifically because the venue wifi was &amp;ldquo;correcting&amp;rdquo; my tampering
+of the DNS on the demo victim, they were still visiting the real website.&lt;/p&gt;
+
+&lt;p&gt;And so a new demo was born, the &amp;ldquo;How this venue wifi is tampering with our, and
+your, connection right now&amp;rdquo; demo.&lt;/p&gt;
+
+&lt;p&gt;It appeared that DNS on this network was not used to determine which webserver
+to contact when browsing to a page, it was merely a method to ensure that
+connections were routed to anything other than the local network, at which
+point something else took over.  This is pretty easy to demonstrate, by setting up
+an /etc/hosts entry (used to locally override DNS for a particular FQDN) for a
+website, directing it to an unused RFC1918 address which was not on the local
+network, and by definition not on the internet either, we can test how DNS is
+used.  The site still loaded up fine in a browser, this leads me to suspect
+that a transparent proxy is inline somewhere, intercepting all traffic and then
+using the host header in the HTTP request to determine which pages to deliver
+as opposed to using the destination addres in the of the IP header.&lt;/p&gt;
+
+&lt;p&gt;Using tcptraceroute on port 80 we also find that every website tested was
+apparently located on the local LAN, which of course they are not:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    $ sudo tcptraceroute www.google.com 80
+    Selected device en0, address 192.168.1.4, port 55333 for outgoing packets
+    Tracing the path to www.google.com (66.185.95.49) on TCP port 80 (http), 30 hops max
+     1  66.185.95.49 [open]  0.576 ms  0.744 ms  0.515 ms
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finally using any packetsniffer (wireshark in this case), we can capture the
+payload of a transaction and look for artifacts which may give away what is
+happening.  In this instance it was very easy to spot:&lt;/p&gt;
+
+&lt;p&gt;{% blockquote %}
+X-Cache: MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128
+Via: 1.1 localhost:3128 (squid/2.7.STABLE9)
+{% endblockquote %}&lt;/p&gt;
+
+&lt;p&gt;These lines in the HTTP response header are not sent by the webserver, I was
+visiting my own webserver, so I&amp;rsquo;m pretty sure of this fact.  Anyone who has
+experience in this field knows that this screams transparent proxy.  And if you
+look up the version which is so helpfully displayed, you will notice that it
+screams horribly out of date and probably not patched proxy.&lt;/p&gt;
+
+&lt;p&gt;The point that we made at the time is that a high percentage of users in the
+audience are probably on this network as we spoke, that they were being MiTM&amp;rsquo;d
+without their knowledge.  If someone had compromised that old version of squid
+that they could have been doing any number of things to those http connections
+and the devices using them.&lt;/p&gt;
+
+&lt;p&gt;As security professionals we talk about the dangers of conference and coffee
+shop wifi all the time, from the point of view of other users of the network
+being malicious.  It&amp;rsquo;s always worth remembering that you can&amp;rsquo;t trust the venues
+themselves to be completely clean either.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>sc congress toronto</title>
+      <link>/2015/06/sc-congress-toronto/</link>
+      <pubDate>Fri, 12 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/06/sc-congress-toronto/</guid>
+      <description>&lt;p&gt;Yesterday &lt;a href=&#34;https://twitter.com/myrcurial/&#34;&gt;James Arlen&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/synackpse/&#34;&gt;I&lt;/a&gt; gave the closing Keynote at &lt;a href=&#34;http://www.sccongress.com/toronto/&#34;&gt;SC Congress Toronto&lt;/a&gt;.&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you would like to see the slides, we have made the available on slideshare:&lt;/p&gt;
+
+&lt;iframe src=&#34;https://www.slideshare.net/slideshow/embed_code/key/81965WLKIkp1Dr&#34; width=&#34;476&#34; height=&#34;400&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;And the pre-recorded demo is available here (the live demo was, unfortunately, not recorded):&lt;/p&gt;
+
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/ew-2kMLcdLs&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>bsides toronto 2015 is coming...</title>
+      <link>/2015/05/bsides-toronto-2015-is-coming.../</link>
+      <pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/05/bsides-toronto-2015-is-coming.../</guid>
+      <description>&lt;p&gt;Returning for it&amp;rsquo;s third year, &lt;a href=&#34;http://www.bsidesto.ca/&#34;&gt;BSides
+Toronto&lt;/a&gt; has just been announced for 7th November 2015 and the CFP opened,
+so if you want to speak get your submission in!  (details on &lt;a
+href=&#34;http://www.bsidesto.ca/&#34;&gt;the BSidesTO website&lt;/a&gt;).&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Keep an eye out on &lt;a href=&#34;http://twitter.com/bsidesto/&#34;&gt;Twitter&lt;/a&gt; too as
+announcements when registration opens, speakers are announced, etc.&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;I won&amp;rsquo;t be speaking this year because I have the pleasure of taking one of the
+spots as an organiser for the conference, so I will definitely be there&amp;hellip;
+lurking :)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/glitchsides.png&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>stealthier attacks and smarter defending with tls fingerprinting</title>
+      <link>/2015/05/stealthier-attacks-and-smarter-defending-with-tls-fingerprinting/</link>
+      <pubDate>Mon, 25 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/05/stealthier-attacks-and-smarter-defending-with-tls-fingerprinting/</guid>
+      <description>&lt;p&gt;I am really pleased to announce that I have decided to try my hand at talking
+at conferences again this year and have a new talk ready &amp;ldquo;Stealthier Attacks
+and Smarter Defending with TLS Fingerprinting&amp;rdquo;.  Despite being a talk on TLS
+(and SSL) there isn&amp;rsquo;t any complex crypto or mathematics, this is aimed at
+defenders and attackers rather than cryptographers.  Here&amp;rsquo;s the abstract:&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Ever been busted because you man in the middle software (which does TLS
+properly) alerted someone to your bad certificate?  No more! Want to detect
+certain types of connections leaving your network, but can&amp;rsquo;t keep the IP
+blacklist up to date?  This could be the answer.&lt;/p&gt;
+
+&lt;p&gt;This talk includes an introduction to both TLS and man in the middle attacks,
+a walkthrough on what TLS fingerprints contain, how to create your own
+fingerprints, how we use the fingerprints in several scenarios, a demo, and a
+discussion of implications and pitfalls.&lt;/p&gt;
+
+&lt;p&gt;TLS provides transport security to all manner of connections from legitimate
+financial transactions to private conversations and malware calling home.
+The inability to analyse encrypted traffic protects its users, whether they
+are legitimate or malicious.  This talk explores a technique for quickly and
+passively fingerprinting TLS clients and adapting our responses for the
+purposes of both attack and defence. Attackers can make automated decisions
+concerning when to man in the middle a connection and when to let the clients
+pass through silently, remaining stealthy.  Defenders can gain insight into
+what is making encrypted connections within their networks without access to
+either endpoints or cryptographic keying material.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I am really excited to have been accepted to speak at &lt;a href=&#34;http://www.sector.ca/&#34;&gt;SecTor&lt;/a&gt; for the second time in October (page for my session &lt;a href=&#34;http://www.sector.ca/Program/Sessions/Session-Details/stealthier-attacks-and-smarter-defending-with-tls-fingerprinting&#34;&gt;here&lt;/a&gt;).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>mitm in telecoms networks i told you so ... sort of</title>
+      <link>/2015/03/mitm-in-telecoms-networks-i-told-you-so-...-sort-of/</link>
+      <pubDate>Wed, 18 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/03/mitm-in-telecoms-networks-i-told-you-so-...-sort-of/</guid>
+      <description>&lt;p&gt;For anyone that has read this blog before, you will probably know that at the end of 2014 I gave my &amp;ldquo;Corporation in The Middle&amp;rdquo; talk at both &lt;a href=&#34;http://blog.squarelemon.com/blog/2014/10/29/corporation-in-the-middle/&#34;&gt;SecTor&lt;/a&gt; and &lt;a href=&#34;http://blog.squarelemon.com/blog/2014/12/29/bsides-toronto-video-and-slides/&#34;&gt;BSides Toronto&lt;/a&gt;.  In short my ISP (&lt;a href=&#34;http://www.rogers.com&#34;&gt;Rogers&lt;/a&gt;) used a platform to Man (Corporation) in The Middle my and every other customers connection in order to insert notification banners at the top of pages in certain circumstances, such approaching your bandwidth cap.  I argued during my &amp;ldquo;What Could Possibly Go Wrong?&amp;rdquo; section that even if my ISP was completely well intentioned that the mere presence of this platform presented a risk to customers.  What would happen if they had a rogue member of staff, became coerced in some way or were hacked?  A malicious 3rd party could use their platform to inject javascript to drop 0-day or socially engineer users with fake Flash or Java updates, for example.&lt;/p&gt;
+
+&lt;p&gt;Then last night I read the article &lt;i&gt;&amp;ldquo;&lt;a href=&#34;http://www.theglobeandmail.com/news/national/nsa-trying-to-map-rogers-rbc-communications-traffic-leak-shows/article23491118/&#34;&gt;NSA trying to map Rogers, RBC communications traffic, leak shows&lt;/a&gt;&amp;ldquo;&lt;/i&gt; in The Globe and Mail.  It describes a leaked NSA document entitled &lt;i&gt;“Private Networks: Analysis, Contextualization and Setting the Vision”&lt;/i&gt;, the article goes on to say &lt;i&gt;&amp;ldquo;A comparison of this document with previous Snowden leaks suggests it may be a preliminary step in broad efforts to identify, study and, if deemed necessary, “exploit” organizations’ internal communication networks.&amp;rdquo;&lt;/i&gt;.  Of course there are no details as to if this ever came to pass and if it did to what degree any penetration took place, however I believe that this does indeed demonstrate that my fears were not completely unfounded.&lt;/p&gt;
+
+&lt;p&gt;If anybody were to penetrate the networks of any ISPs running tools such as this, these injection/interception platforms provide an easy mechanism to attack the customer base en mass.  To provide an indication of scale Perftech, the manufacturer of the platform used by my ISP, published in January that their &lt;a href=&#34;http://www.perftech.com/newsroom/perftech-adds-telco-giant-roster-q4-grows-subscriber-reach-30-2014/&#34;&gt;overall subscriber reach is currently 19.5 million&lt;/a&gt;, and that&amp;rsquo;s just one manufacturer.&lt;/p&gt;
+
+&lt;p&gt;There are many platforms that &amp;ldquo;legitimately&amp;rdquo; Man in The Middle our communications, however, unless properly managed and secured they can become a very useful tool in an adversaries arsenal.&lt;/p&gt;
+
+&lt;p&gt;Corporations which are targetted by nation state intelligence agencies are unlikely to successfully defend themselves.  Making announcements via these interception platforms as opposed to using something more (less?) transparent and obvious to the user removes the opportunity for the user to make informed security decisions.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>quick and dirty crapware analysis ids rule creation foo</title>
+      <link>/2015/03/quick-and-dirty-crapware-analysis-ids-rule-creation-foo/</link>
+      <pubDate>Wed, 04 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/03/quick-and-dirty-crapware-analysis-ids-rule-creation-foo/</guid>
+      <description>&lt;p&gt;Recently I have made some brief posts on the &lt;a href=&#34;https://github.com/LeeBrotherston/snort&#34;&gt;Snort/Suricata rules&lt;/a&gt; that I wrote to detect &lt;a href=&#34;http://blog.squarelemon.com/blog/2015/02/20/superfish-detection/&#34;&gt;SuperFish&lt;/a&gt; and &lt;a href=&#34;http://blog.squarelemon.com/blog/2015/02/23/privdog-detection/&#34;&gt;PrivDog&lt;/a&gt;, two pieces of Crapware/Malware/Adware/PUP that insert themselves as a Certificate Authority in the local browsers and proceed to Man in the Middle HTTPS traffic for the purposes of injecting ads.&lt;/p&gt;
+
+&lt;p&gt;In those posts I mentioned that CipherSuite fingerprinting was the key to creating the rules, however I didn&amp;rsquo;t give a very comprehensive technical blow-by-blow.  So, now I have a new rule to add having noticed another application Man in the Middle&amp;rsquo;ing browsers (&lt;a href=&#34;http://geniusbox.net/&#34;&gt;GeniusBox&lt;/a&gt;) using the same technique, it seems like an apt time to write up what I have been doing in a more useful way.&lt;!-- more --&gt;&lt;/p&gt;
+
+&lt;p&gt;Although many of these miscreant applications insert scripts into webpages that are hosted on remote sources, they all conduct their Man in the Middle attacks on the local machine.  The chosen technique is to, either via network hooks or by setting browsers to use localhost as a proxy, ensure that the connection from the browser is terminated locally and a connection to the webserver is made via their &amp;ldquo;application&amp;rdquo;.  They don&amp;rsquo;t hide this, it is trivial to spot with some ghetto forensics.&lt;/p&gt;
+
+&lt;p&gt;First we can use &lt;code&gt;netstat -ano&lt;/code&gt; to look at the connections and associated pid&amp;rsquo;s on the local host.  Notice how PID 3388 is making a local connection to a listening PID 4084 on port 49546?  Also note that PID 4084 is also making a number of connections to external hosts on ports 80 (http) and 443 (https):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/netstat.png&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;By looking at the details tab on taskmanager we can see which executable names those pids pertain to.  In this case it&amp;rsquo;s iexplore.exe (Internet Explorer) and Client.exe (&lt;a href=&#34;http://geniusbox.net/&#34;&gt;GeniusBox&lt;/a&gt;):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/taskman.png&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;Finally, by looking at the process details in Task Manager we can see which directory the binary resides in and can look at that location to see if it really is the app we suspect it is:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/install_dir.png&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;Certainly looks that way!&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s do some CipherSuite fingerprinting and see if we can create a new snort rule.&lt;/p&gt;
+
+&lt;p&gt;First we need to sniff the connection, this is easy, I have installed the application in question inside a virtual machine and so can sniff on one of the virtual interfaces using tcpdump/wireshark/t-shark/whatever on my host OS.  I sniff web browsing traffic both before and after I infect the host on as many browsers as I wish to test (in this case Internet Explorer, Firefox and Chrome).  Remember this is SSL so in theory you shouldn&amp;rsquo;t be able to decrypt the traffic and determine what the user agent string is (of course with a MiTM attack if you have the private certs it&amp;rsquo;s entirely possible, as is the case if &lt;a href=&#34;https://jimshaver.net/2015/02/11/decrypting-tls-browser-traffic-with-wireshark-the-easy-way/&#34;&gt;the browser is configured to save the ssl keys&lt;/a&gt;); I would recommend a separate pcap file for each browser both before and after (6 in total in this case) to keep analysis easy.&lt;/p&gt;
+
+&lt;p&gt;Each of the captures can be loaded into WireShark in turn for easy analysis (other packet capture tools will show the info too, but WireShark just makes it easy), the hex is helpfully highlighted at the bottom so we know which data to include in a snort/suricata rule:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/wireshark.png&#34; style=&#34;border: 1px solid #000000;&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;The list is not only the supported Cipher Suites, it is also in preference order.  My research thus far shows the the combination of supported Cipher Suites, preference order and total number of suites offered is fairly unique to each browser family.  It remains static between each connection that the browser makes, this is not a per-session variable.&lt;/p&gt;
+
+&lt;p&gt;When looking at &lt;a href=&#34;http://blog.squarelemon.com/blog/2015/02/20/superfish-detection/&#34;&gt;SuperFish&lt;/a&gt; and &lt;a href=&#34;http://blog.squarelemon.com/blog/2015/02/23/privdog-detection/&#34;&gt;PrivDog&lt;/a&gt; I noticed that the 3 browsers all had their own fingerprints prior to infection, but exhibited the same (fourth) fingerprint when intercepted by the applications.  Presumably because the applications terminate SSL locally (resigning it with with their own CA that they installed) and they need to implement a (fourth) SSL client of their own to make the outbound connection to the real webserver, and we can detect that.&lt;/p&gt;
+
+&lt;p&gt;Why is this useful?  Network administrators often do not have a handle on exactly what is on their network, BYOD and other initiatives mean that self-prodcured of self-managed devices are prevalent in many environments.  For this reason desktop management systems may not be aware of the presence of these applications, but an IDS/IPS platform can detect them based on network traffic using this technique.  Furthermore, web server administrators can detect on this signature in order to determine if one of their clients (someone browsing to their website) has been affected and potentially warn/block them as desired.  Of course there is always the possibility that someone malicious could detect this for other reasons, but that&amp;rsquo;s a whole other post ;)&lt;/p&gt;
+
+&lt;p&gt;We can simply take the hex from WireShark and use that as the &amp;ldquo;content&amp;rdquo; for a snort/suricata rule.  Furthermore we can use an offset statement to reduce the chances that we are just picking up the same string of bytes reoccurring in some other context.  The Cipher Suite list in the Client Hello packet is a fixed length from the start of the packet contents.  Using these two details we are able to create a rule:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;alert tcp any any -&amp;gt; any 443 (msg:&amp;ldquo;GeniusBox Cipher Suite Profile Matched&amp;rdquo;; flow:to_server; reference:url,&lt;a href=&#34;https://gist.githubusercontent.com/LeeBrotherston/523ffbc02f2407fd213c/raw/008b77bab61d26761119f07d518779ed6edfbd74/sid:1000006&#34;&gt;https://gist.githubusercontent.com/LeeBrotherston/523ffbc02f2407fd213c/raw/008b77bab61d26761119f07d518779ed6edfbd74/sid:1000006&lt;/a&gt;; content:&amp;ldquo;|00 18 c0 14 c0 13 00 35 00 2f c0 0a c0 09 00 38 00 32 00 0a 00 13 00 05 00 04|&amp;rdquo;; offset: 44; sid:1000006; rev:1;)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;(The content also includes the proceeding two bytes which is the ciphersuites length field)&lt;/p&gt;
+
+&lt;p&gt;The next phase is to test the rules, but that will be a post of it&amp;rsquo;s own (stay tuned!)&lt;/p&gt;
+
+&lt;p&gt;I have added this to &lt;a href=&#34;https://github.com/LeeBrotherston/snort&#34;&gt;my snort/suricata rules for interception detection&lt;/a&gt; which also include coverage for &lt;a href=&#34;http://blog.squarelemon.com/blog/2015/02/20/superfish-detection/&#34;&gt;SuperFish&lt;/a&gt;, &lt;a href=&#34;http://blog.squarelemon.com/blog/2015/02/23/privdog-detection/&#34;&gt;PrivDog&lt;/a&gt; and the techniques described in my &lt;a href=&#34;http://blog.squarelemon.com/blog/2014/12/29/bsides-toronto-video-and-slides/&#34;&gt;Corporation in the Middle talk&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Any feedback on the rules are greatly appreciated.  Especially if anyone has particular successes to share of failures to highlight that I can use to improve the accuracy.  As always you can &lt;a href=&#34;https://twitter.com/synackpse&#34;&gt;reach me on twitter, I am @synackpse&lt;/a&gt; or &lt;a href=&#34;https://github.com/LeeBrotherston/snort/issues&#34;&gt;raise an issue in github&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>privdog detection</title>
+      <link>/2015/02/privdog-detection/</link>
+      <pubDate>Mon, 23 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/02/privdog-detection/</guid>
+      <description>&lt;p&gt;In much the same way as I was &lt;a href=&#34;http://blog.squarelemon.com/blog/2015/02/20/superfish-detection/&#34;&gt;able to detect hosts infected with SuperFish&lt;/a&gt; by profiling the changes in Cipher Suites used in their SSL connections (by virtue of SuperFish essentially having it&amp;rsquo;s own SSL client) I have been able to create a fingerprint for PrivDog.  For those who are interested, the ciphersuites used by the PrivDog client are:&lt;!-- More --&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    Cipher Suites (44 suites)
+        Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014)
+        Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA (0xc00a)
+        Cipher Suite: TLS_SRP_SHA_DSS_WITH_AES_256_CBC_SHA (0xc022)
+        Cipher Suite: TLS_SRP_SHA_RSA_WITH_AES_256_CBC_SHA (0xc021)
+        Cipher Suite: TLS_DHE_RSA_WITH_AES_256_CBC_SHA (0x0039)
+        Cipher Suite: TLS_DHE_DSS_WITH_AES_256_CBC_SHA (0x0038)
+        Cipher Suite: TLS_ECDH_RSA_WITH_AES_256_CBC_SHA (0xc00f)
+        Cipher Suite: TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA (0xc005)
+        Cipher Suite: TLS_RSA_WITH_AES_256_CBC_SHA (0x0035)
+        Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (0xc013)
+        Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA (0xc009)
+        Cipher Suite: TLS_SRP_SHA_DSS_WITH_AES_128_CBC_SHA (0xc01f)
+        Cipher Suite: TLS_SRP_SHA_RSA_WITH_AES_128_CBC_SHA (0xc01e)
+        Cipher Suite: TLS_DHE_RSA_WITH_AES_128_CBC_SHA (0x0033)
+        Cipher Suite: TLS_DHE_DSS_WITH_AES_128_CBC_SHA (0x0032)
+        Cipher Suite: TLS_ECDH_RSA_WITH_AES_128_CBC_SHA (0xc00e)
+        Cipher Suite: TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA (0xc004)
+        Cipher Suite: TLS_RSA_WITH_AES_128_CBC_SHA (0x002f)
+        Cipher Suite: TLS_ECDHE_RSA_WITH_RC4_128_SHA (0xc011)
+        Cipher Suite: TLS_ECDHE_ECDSA_WITH_RC4_128_SHA (0xc007)
+        Cipher Suite: TLS_ECDH_RSA_WITH_RC4_128_SHA (0xc00c)
+        Cipher Suite: TLS_ECDH_ECDSA_WITH_RC4_128_SHA (0xc002)
+        Cipher Suite: TLS_RSA_WITH_RC4_128_SHA (0x0005)
+        Cipher Suite: TLS_RSA_WITH_RC4_128_MD5 (0x0004)
+        Cipher Suite: TLS_DHE_RSA_WITH_SEED_CBC_SHA (0x009a)
+        Cipher Suite: TLS_DHE_DSS_WITH_SEED_CBC_SHA (0x0099)
+        Cipher Suite: TLS_RSA_WITH_SEED_CBC_SHA (0x0096)
+        Cipher Suite: TLS_DHE_RSA_WITH_DES_CBC_SHA (0x0015)
+        Cipher Suite: TLS_DHE_DSS_WITH_DES_CBC_SHA (0x0012)
+        Cipher Suite: TLS_RSA_WITH_DES_CBC_SHA (0x0009)
+        Cipher Suite: TLS_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA (0x0014)
+        Cipher Suite: TLS_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA (0x0011)
+        Cipher Suite: TLS_RSA_EXPORT_WITH_DES40_CBC_SHA (0x0008)
+        Cipher Suite: TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA (0xc012)
+        Cipher Suite: TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA (0xc008)
+        Cipher Suite: TLS_SRP_SHA_DSS_WITH_3DES_EDE_CBC_SHA (0xc01c)
+        Cipher Suite: TLS_SRP_SHA_RSA_WITH_3DES_EDE_CBC_SHA (0xc01b)
+        Cipher Suite: TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA (0x0016)
+        Cipher Suite: TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA (0x0013)
+        Cipher Suite: TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA (0xc00d)
+        Cipher Suite: TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA (0xc003)
+        Cipher Suite: TLS_RSA_WITH_3DES_EDE_CBC_SHA (0x000a)
+        Cipher Suite: TLS_RSA_WITH_IDEA_CBC_SHA (0x0007)
+        Cipher Suite: TLS_EMPTY_RENEGOTIATION_INFO_SCSV (0x00ff)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I have updated my &lt;a href=&#34;https://github.com/LeeBrotherston/snort/blob/master/snort_interception.rules&#34;&gt;Interception Snort Rules&lt;/a&gt; to include this.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>superfish detection</title>
+      <link>/2015/02/superfish-detection/</link>
+      <pubDate>Fri, 20 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/02/superfish-detection/</guid>
+      <description>&lt;p&gt;Much has been in the press the past couple of days regarding Superfish, specifically being pre-installed on Lenovo hardware, however the issues discussed are relevant to any device with Superfish installed.  It just so happens that Lenovo made the decision to bundle it up in the factory.&lt;/p&gt;
+
+&lt;p&gt;There are a number of write-ups on the technical nature of this malware/adware, and I won&amp;rsquo;t attempt to rehash those, they are most likely better than anything that I could contribute anyway.  I did however want to be able to detect this on the network to offer network administrators a chance to locate devices on their network which may be affected.&lt;/p&gt;
+
+&lt;p&gt;By creating &lt;a href=&#34;https://blog.filippo.io/make-your-own-superfish-infected-vm/&#34;&gt;a Superfish infected VM&lt;/a&gt; we can examine how the software works in a relatively controlled fashion.&lt;!-- More --&gt;&lt;/p&gt;
+
+&lt;p&gt;By using &amp;ldquo;netstat -ano&amp;rdquo; both before and after infection it comes obvious that the browsers are redirected to C:\Program Files\Lenovo\VisualDiscovery\VisualDiscovery.exe which listens locally and then makes its own connection to webservers, essentially proxying the connection and resigning SSL connections back to the browser with &amp;quot;&lt;a href=&#34;http://blog.erratasec.com/2015/02/extracting-superfish-certificate.html&#34;&gt;That Cert&lt;/a&gt;&amp;quot;.  This lead me to believe that SuperFish, or more specifically VisualDiscovery.exe, had it&amp;rsquo;s own SSL client code.  As Rob points out in his &lt;a href=&#34;http://blog.erratasec.com/2015/02/extracting-superfish-certificate.html&#34;&gt;writeup&lt;/a&gt; there are proper ways to examine how this works and ghetto ways&amp;hellip;.  I went ghetto.&lt;/p&gt;
+
+&lt;p&gt;We can connect to a collection of HTTPS webservers using Internet Explorer, FireFox and Chrome before infecting the machine, then doing it again after infection and sniff the whole lot.  Next we open up the captures in WireShark and see what&amp;rsquo;s the same, what&amp;rsquo;s different, etc.  I noticed that the browsers favoured TLS1.2 and SuperFish prefers TLS1.1, for example.  However the thing that stood out most was the SuperFish selection of Cipher Suites&amp;hellip;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    Cipher Suites Length: 104
+    Cipher Suites (52 suites)
+    Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014)
+    Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA (0xc00a)
+    Cipher Suite: TLS_SRP_SHA_DSS_WITH_AES_256_CBC_SHA (0xc022)
+    Cipher Suite: TLS_SRP_SHA_RSA_WITH_AES_256_CBC_SHA (0xc021)
+    Cipher Suite: TLS_DHE_RSA_WITH_AES_256_CBC_SHA (0x0039)
+    Cipher Suite: TLS_DHE_DSS_WITH_AES_256_CBC_SHA (0x0038)
+    Cipher Suite: TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA (0x0088)
+    Cipher Suite: TLS_DHE_DSS_WITH_CAMELLIA_256_CBC_SHA (0x0087)
+    Cipher Suite: TLS_ECDH_RSA_WITH_AES_256_CBC_SHA (0xc00f)
+    Cipher Suite: TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA (0xc005)
+    Cipher Suite: TLS_RSA_WITH_AES_256_CBC_SHA (0x0035)
+    Cipher Suite: TLS_RSA_WITH_CAMELLIA_256_CBC_SHA (0x0084)
+    Cipher Suite: TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA (0xc012)
+    Cipher Suite: TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA (0xc008)
+    Cipher Suite: TLS_SRP_SHA_DSS_WITH_3DES_EDE_CBC_SHA (0xc01c)
+    Cipher Suite: TLS_SRP_SHA_RSA_WITH_3DES_EDE_CBC_SHA (0xc01b)
+    Cipher Suite: TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA (0x0016)
+    Cipher Suite: TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA (0x0013)
+    Cipher Suite: TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA (0xc00d)
+    Cipher Suite: TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA (0xc003)
+    Cipher Suite: TLS_RSA_WITH_3DES_EDE_CBC_SHA (0x000a)
+    Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (0xc013)
+    Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA (0xc009)
+    Cipher Suite: TLS_SRP_SHA_DSS_WITH_AES_128_CBC_SHA (0xc01f)
+    Cipher Suite: TLS_SRP_SHA_RSA_WITH_AES_128_CBC_SHA (0xc01e)
+    Cipher Suite: TLS_DHE_RSA_WITH_AES_128_CBC_SHA (0x0033)
+    Cipher Suite: TLS_DHE_DSS_WITH_AES_128_CBC_SHA (0x0032)
+    Cipher Suite: TLS_DHE_RSA_WITH_SEED_CBC_SHA (0x009a)
+    Cipher Suite: TLS_DHE_DSS_WITH_SEED_CBC_SHA (0x0099)
+    Cipher Suite: TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA (0x0045)
+    Cipher Suite: TLS_DHE_DSS_WITH_CAMELLIA_128_CBC_SHA (0x0044)
+    Cipher Suite: TLS_ECDH_RSA_WITH_AES_128_CBC_SHA (0xc00e)
+    Cipher Suite: TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA (0xc004)
+    Cipher Suite: TLS_RSA_WITH_AES_128_CBC_SHA (0x002f)
+    Cipher Suite: TLS_RSA_WITH_SEED_CBC_SHA (0x0096)
+    Cipher Suite: TLS_RSA_WITH_CAMELLIA_128_CBC_SHA (0x0041)
+    Cipher Suite: TLS_RSA_WITH_IDEA_CBC_SHA (0x0007)
+    Cipher Suite: TLS_ECDHE_RSA_WITH_RC4_128_SHA (0xc011)
+    Cipher Suite: TLS_ECDHE_ECDSA_WITH_RC4_128_SHA (0xc007)
+    Cipher Suite: TLS_ECDH_RSA_WITH_RC4_128_SHA (0xc00c)
+    Cipher Suite: TLS_ECDH_ECDSA_WITH_RC4_128_SHA (0xc002)
+    Cipher Suite: TLS_RSA_WITH_RC4_128_SHA (0x0005)
+    Cipher Suite: TLS_RSA_WITH_RC4_128_MD5 (0x0004)
+    Cipher Suite: TLS_DHE_RSA_WITH_DES_CBC_SHA (0x0015)
+    Cipher Suite: TLS_DHE_DSS_WITH_DES_CBC_SHA (0x0012)
+    Cipher Suite: TLS_RSA_WITH_DES_CBC_SHA (0x0009)
+    Cipher Suite: TLS_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA (0x0014)
+    Cipher Suite: TLS_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA (0x0011)
+    Cipher Suite: TLS_RSA_EXPORT_WITH_DES40_CBC_SHA (0x0008)
+    Cipher Suite: TLS_RSA_EXPORT_WITH_RC2_CBC_40_MD5 (0x0006)
+    Cipher Suite: TLS_RSA_EXPORT_WITH_RC4_40_MD5 (0x0003)
+    Cipher Suite: TLS_EMPTY_RENEGOTIATION_INFO_SCSV (0x00ff)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So, I have added this as a signature to my &lt;a href=&#34;https://github.com/LeeBrotherston/snort/blob/master/snort_interception.rules&#34;&gt;snort rules for interception (MiTM) detection&lt;/a&gt;.  These rules also include detection for the appliances discovered during my &lt;a href=&#34;http://blog.squarelemon.com/blog/2014/10/29/corporation-in-the-middle/&#34;&gt;Corporation in The Middle&lt;/a&gt; talk, however if you are only interested in SuperFish you want rule sid:1000004.&lt;/p&gt;
+
+&lt;p&gt;If anyone has luck, epic failure or anything else I would be really interested in hearing more from you.  I&amp;rsquo;m &lt;a href=&#34;http://twitter.com/synackpse/&#34;&gt;@SynAckPse&lt;/a&gt; on twitter.&lt;/p&gt;
+
+&lt;p&gt;Enjoy!&lt;/p&gt;
+
+&lt;p&gt;[Edit: This same technique has allowed me to &lt;a href=&#34;http://blog.squarelemon.com/blog/2015/02/23/privdog-detection/&#34;&gt;fingerprint PrivDog&lt;/a&gt; also.  That fingerprint is included in the &lt;a href=&#34;https://github.com/LeeBrotherston/snort/blob/master/snort_interception.rules&#34;&gt;snort rules&lt;/a&gt;]&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>man in the middle reach grows</title>
+      <link>/2015/02/man-in-the-middle-reach-grows/</link>
+      <pubDate>Thu, 19 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/02/man-in-the-middle-reach-grows/</guid>
+      <description>&lt;p&gt;With all the talk of &lt;a href=&#34;http://www.theregister.co.uk/2015/02/19/superfish_lenovo_spyware/&#34;&gt;Lenovo&lt;/a&gt; and &lt;a href=&#34;http://arstechnica.com/security/2015/02/lenovo-pcs-ship-with-man-in-the-middle-adware-that-breaks-https-connections/&#34;&gt;Superfish&lt;/a&gt; in the press, now seems a good time to mention an update which is personal to me on the topic of Man in The Middle attacks.&lt;/p&gt;
+
+&lt;p&gt;People have asked me how widespread the &lt;a href=&#34;http://blog.squarelemon.com/blog/2014/10/29/corporation-in-the-middle/&#34;&gt;man in the middle attempts made my by ISP&lt;/a&gt; actually are.  Well thankfully the manufacturer of the equipment used has put out a press statement around their current &amp;ldquo;subscriber reach&amp;rdquo; which you can read in full &lt;a href=&#34;http://www.perftech.com/newsroom/perftech-adds-telco-giant-roster-q4-grows-subscriber-reach-30-2014/&#34;&gt;here&lt;/a&gt;.  The important paragraph for us is this:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;New-customer wins along with existing-customer expansions for 2014 resulted in a substantial increase in the aggregate subscriber reach across all PerfTech’s ISP customers.  Previously at roughly 15 million subscribers, that total climbed to approximately 19.5 million for 2014, a gain of 30%.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;If these figures are to be believed, that&amp;rsquo;s 19.5 million subscribers.  By my understanding a subscriber is a connection (e.g. one cable or DSL line), not a single device so the total user count is probably significantly higher.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

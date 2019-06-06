@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    
+    <title>SquareLemon</title>
+
+    
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    
+    
+
+    <style>
+	body {
+		background: #52bee2;
+		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-size: 14px;
+		color: #000;
+		line-height: 1.5;
+	}
+	h1, h2, h3, h4 {
+		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		color: #000;
+	}
+	h1 {
+		font-size: 50px;
+	}
+	h2 {
+		font-size: 40px;
+	}
+	h3 {
+		font-size: 30px;
+	}
+	h4 {
+		font-size: 20px;
+		padding-top: 20px;
+	}
+	a {
+		color: #FF7056;
+	}
+	div {
+		border-radius: 15px;
+	}
+	code {
+		font-family: bold "Courier New", Courier, monospace;
+		color: black;
+		background: lightblue;
+	}
+	blockquote {
+	  font-family: Verdana, Geneva, sans-serif;
+	  border-left: 10px solid #000;
+	  margin: 1.5em 10px;
+	  padding: 0.5em 10px;
+	  quotes: "\201C""\201D""\2018""\2019";
+	}
+	blockquote:before {
+	  color: #000;
+	  content: open-quote;
+	  font-size: 4em;
+	  line-height: 0.1em;
+	  margin-right: 0.25em;
+	  vertical-align: -0.4em;
+	}
+	blockquote p {
+		  display: inline;
+	}
+	.post-meta {
+		color: grey;
+		font-style: italic;
+	}
+	@media (max-width: 992px) {
+	    h1 {
+		font-size: 20px;
+	    }
+	    body {
+		font-size: 16px;
+	    }
+
+	}
+    </style>
+  </head>
+  <body>
+
+  
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3" style="text-align: right;">
+                <h1>SquareLemon Blog</h1>
+                
+
+    </div>
+  </div>
+
+
+
+	
+  
+  <div class="row">
+	<br />
+  </div>
+
+  
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3" style="background: #AEE5F7; border-color: white; border-style: solid;">
+	  <a href="/2015/06/mitm-the-mitmers/">
+        <h2>mitm the mitmers</h2> 
+          	    
+      </a>
+      <p class="post-meta">Posted on June 21, 2015</p>
+		<p>Last week I mentioned that <a href="https://www.twitter.com/myrcurial/">James
+Arlen</a> and <a href="https://www.twitter.com/synackpse/">I</a> gave the
+<a href="/blog/2015/06/12/sc-congress-toronto/">closing keynote at SCCongress
+Toronto</a>.  We had planned to do a live demo as part of the talk, but after
+reaching the venue and connecting to the wifi we found that it would not work
+as planned, specifically because the venue wifi was &ldquo;correcting&rdquo; my tampering
+of the DNS on the demo victim, they were still visiting the real website.</p>
+
+<p>And so a new demo was born, the &ldquo;How this venue wifi is tampering with our, and
+your, connection right now&rdquo; demo.</p>
+
+<p>It appeared that DNS on this network was not used to determine which webserver
+to contact when browsing to a page, it was merely a method to ensure that
+connections were routed to anything other than the local network, at which
+point something else took over.  This is pretty easy to demonstrate, by setting up
+an /etc/hosts entry (used to locally override DNS for a particular FQDN) for a
+website, directing it to an unused RFC1918 address which was not on the local
+network, and by definition not on the internet either, we can test how DNS is
+used.  The site still loaded up fine in a browser, this leads me to suspect
+that a transparent proxy is inline somewhere, intercepting all traffic and then
+using the host header in the HTTP request to determine which pages to deliver
+as opposed to using the destination addres in the of the IP header.</p>
+
+<p>Using tcptraceroute on port 80 we also find that every website tested was
+apparently located on the local LAN, which of course they are not:</p>
+
+<pre><code>    $ sudo tcptraceroute www.google.com 80
+    Selected device en0, address 192.168.1.4, port 55333 for outgoing packets
+    Tracing the path to www.google.com (66.185.95.49) on TCP port 80 (http), 30 hops max
+     1  66.185.95.49 [open]  0.576 ms  0.744 ms  0.515 ms
+</code></pre>
+
+<p>Finally using any packetsniffer (wireshark in this case), we can capture the
+payload of a transaction and look for artifacts which may give away what is
+happening.  In this instance it was very easy to spot:</p>
+
+<p>{% blockquote %}
+X-Cache: MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128
+Via: 1.1 localhost:3128 (squid/2.7.STABLE9)
+{% endblockquote %}</p>
+
+<p>These lines in the HTTP response header are not sent by the webserver, I was
+visiting my own webserver, so I&rsquo;m pretty sure of this fact.  Anyone who has
+experience in this field knows that this screams transparent proxy.  And if you
+look up the version which is so helpfully displayed, you will notice that it
+screams horribly out of date and probably not patched proxy.</p>
+
+<p>The point that we made at the time is that a high percentage of users in the
+audience are probably on this network as we spoke, that they were being MiTM&rsquo;d
+without their knowledge.  If someone had compromised that old version of squid
+that they could have been doing any number of things to those http connections
+and the devices using them.</p>
+
+<p>As security professionals we talk about the dangers of conference and coffee
+shop wifi all the time, from the point of view of other users of the network
+being malicious.  It&rsquo;s always worth remembering that you can&rsquo;t trust the venues
+themselves to be completely clean either.</p>
+
+      <br /><br />
+    </div>
+  </div>
+
+  <br /><br />
+
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+	
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-54930700-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+
+
+  </body>
+</html>
+

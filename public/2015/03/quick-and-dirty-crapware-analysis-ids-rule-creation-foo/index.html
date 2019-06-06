@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    
+    <title>SquareLemon</title>
+
+    
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    
+    
+
+    <style>
+	body {
+		background: #52bee2;
+		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-size: 14px;
+		color: #000;
+		line-height: 1.5;
+	}
+	h1, h2, h3, h4 {
+		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		color: #000;
+	}
+	h1 {
+		font-size: 50px;
+	}
+	h2 {
+		font-size: 40px;
+	}
+	h3 {
+		font-size: 30px;
+	}
+	h4 {
+		font-size: 20px;
+		padding-top: 20px;
+	}
+	a {
+		color: #FF7056;
+	}
+	div {
+		border-radius: 15px;
+	}
+	code {
+		font-family: bold "Courier New", Courier, monospace;
+		color: black;
+		background: lightblue;
+	}
+	blockquote {
+	  font-family: Verdana, Geneva, sans-serif;
+	  border-left: 10px solid #000;
+	  margin: 1.5em 10px;
+	  padding: 0.5em 10px;
+	  quotes: "\201C""\201D""\2018""\2019";
+	}
+	blockquote:before {
+	  color: #000;
+	  content: open-quote;
+	  font-size: 4em;
+	  line-height: 0.1em;
+	  margin-right: 0.25em;
+	  vertical-align: -0.4em;
+	}
+	blockquote p {
+		  display: inline;
+	}
+	.post-meta {
+		color: grey;
+		font-style: italic;
+	}
+	@media (max-width: 992px) {
+	    h1 {
+		font-size: 20px;
+	    }
+	    body {
+		font-size: 16px;
+	    }
+
+	}
+    </style>
+  </head>
+  <body>
+
+  
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3" style="text-align: right;">
+                <h1>SquareLemon Blog</h1>
+                
+
+    </div>
+  </div>
+
+
+
+	
+  
+  <div class="row">
+	<br />
+  </div>
+
+  
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3" style="background: #AEE5F7; border-color: white; border-style: solid;">
+	  <a href="/2015/03/quick-and-dirty-crapware-analysis-ids-rule-creation-foo/">
+        <h2>quick and dirty crapware analysis ids rule creation foo</h2> 
+          	    
+      </a>
+      <p class="post-meta">Posted on March 4, 2015</p>
+		<p>Recently I have made some brief posts on the <a href="https://github.com/LeeBrotherston/snort">Snort/Suricata rules</a> that I wrote to detect <a href="http://blog.squarelemon.com/blog/2015/02/20/superfish-detection/">SuperFish</a> and <a href="http://blog.squarelemon.com/blog/2015/02/23/privdog-detection/">PrivDog</a>, two pieces of Crapware/Malware/Adware/PUP that insert themselves as a Certificate Authority in the local browsers and proceed to Man in the Middle HTTPS traffic for the purposes of injecting ads.</p>
+
+<p>In those posts I mentioned that CipherSuite fingerprinting was the key to creating the rules, however I didn&rsquo;t give a very comprehensive technical blow-by-blow.  So, now I have a new rule to add having noticed another application Man in the Middle&rsquo;ing browsers (<a href="http://geniusbox.net/">GeniusBox</a>) using the same technique, it seems like an apt time to write up what I have been doing in a more useful way.<!-- more --></p>
+
+<p>Although many of these miscreant applications insert scripts into webpages that are hosted on remote sources, they all conduct their Man in the Middle attacks on the local machine.  The chosen technique is to, either via network hooks or by setting browsers to use localhost as a proxy, ensure that the connection from the browser is terminated locally and a connection to the webserver is made via their &ldquo;application&rdquo;.  They don&rsquo;t hide this, it is trivial to spot with some ghetto forensics.</p>
+
+<p>First we can use <code>netstat -ano</code> to look at the connections and associated pid&rsquo;s on the local host.  Notice how PID 3388 is making a local connection to a listening PID 4084 on port 49546?  Also note that PID 4084 is also making a number of connections to external hosts on ports 80 (http) and 443 (https):</p>
+
+<p><img src="/img/netstat.png"></p>
+
+<p>By looking at the details tab on taskmanager we can see which executable names those pids pertain to.  In this case it&rsquo;s iexplore.exe (Internet Explorer) and Client.exe (<a href="http://geniusbox.net/">GeniusBox</a>):</p>
+
+<p><img src="/img/taskman.png"></p>
+
+<p>Finally, by looking at the process details in Task Manager we can see which directory the binary resides in and can look at that location to see if it really is the app we suspect it is:</p>
+
+<p><img src="/img/install_dir.png"></p>
+
+<p>Certainly looks that way!</p>
+
+<p>Let&rsquo;s do some CipherSuite fingerprinting and see if we can create a new snort rule.</p>
+
+<p>First we need to sniff the connection, this is easy, I have installed the application in question inside a virtual machine and so can sniff on one of the virtual interfaces using tcpdump/wireshark/t-shark/whatever on my host OS.  I sniff web browsing traffic both before and after I infect the host on as many browsers as I wish to test (in this case Internet Explorer, Firefox and Chrome).  Remember this is SSL so in theory you shouldn&rsquo;t be able to decrypt the traffic and determine what the user agent string is (of course with a MiTM attack if you have the private certs it&rsquo;s entirely possible, as is the case if <a href="https://jimshaver.net/2015/02/11/decrypting-tls-browser-traffic-with-wireshark-the-easy-way/">the browser is configured to save the ssl keys</a>); I would recommend a separate pcap file for each browser both before and after (6 in total in this case) to keep analysis easy.</p>
+
+<p>Each of the captures can be loaded into WireShark in turn for easy analysis (other packet capture tools will show the info too, but WireShark just makes it easy), the hex is helpfully highlighted at the bottom so we know which data to include in a snort/suricata rule:</p>
+
+<p><img src="/img/wireshark.png" style="border: 1px solid #000000;"></p>
+
+<p>The list is not only the supported Cipher Suites, it is also in preference order.  My research thus far shows the the combination of supported Cipher Suites, preference order and total number of suites offered is fairly unique to each browser family.  It remains static between each connection that the browser makes, this is not a per-session variable.</p>
+
+<p>When looking at <a href="http://blog.squarelemon.com/blog/2015/02/20/superfish-detection/">SuperFish</a> and <a href="http://blog.squarelemon.com/blog/2015/02/23/privdog-detection/">PrivDog</a> I noticed that the 3 browsers all had their own fingerprints prior to infection, but exhibited the same (fourth) fingerprint when intercepted by the applications.  Presumably because the applications terminate SSL locally (resigning it with with their own CA that they installed) and they need to implement a (fourth) SSL client of their own to make the outbound connection to the real webserver, and we can detect that.</p>
+
+<p>Why is this useful?  Network administrators often do not have a handle on exactly what is on their network, BYOD and other initiatives mean that self-prodcured of self-managed devices are prevalent in many environments.  For this reason desktop management systems may not be aware of the presence of these applications, but an IDS/IPS platform can detect them based on network traffic using this technique.  Furthermore, web server administrators can detect on this signature in order to determine if one of their clients (someone browsing to their website) has been affected and potentially warn/block them as desired.  Of course there is always the possibility that someone malicious could detect this for other reasons, but that&rsquo;s a whole other post ;)</p>
+
+<p>We can simply take the hex from WireShark and use that as the &ldquo;content&rdquo; for a snort/suricata rule.  Furthermore we can use an offset statement to reduce the chances that we are just picking up the same string of bytes reoccurring in some other context.  The Cipher Suite list in the Client Hello packet is a fixed length from the start of the packet contents.  Using these two details we are able to create a rule:</p>
+
+<p><code>alert tcp any any -&gt; any 443 (msg:&ldquo;GeniusBox Cipher Suite Profile Matched&rdquo;; flow:to_server; reference:url,<a href="https://gist.githubusercontent.com/LeeBrotherston/523ffbc02f2407fd213c/raw/008b77bab61d26761119f07d518779ed6edfbd74/sid:1000006">https://gist.githubusercontent.com/LeeBrotherston/523ffbc02f2407fd213c/raw/008b77bab61d26761119f07d518779ed6edfbd74/sid:1000006</a>; content:&ldquo;|00 18 c0 14 c0 13 00 35 00 2f c0 0a c0 09 00 38 00 32 00 0a 00 13 00 05 00 04|&rdquo;; offset: 44; sid:1000006; rev:1;)</code></p>
+
+<p>(The content also includes the proceeding two bytes which is the ciphersuites length field)</p>
+
+<p>The next phase is to test the rules, but that will be a post of it&rsquo;s own (stay tuned!)</p>
+
+<p>I have added this to <a href="https://github.com/LeeBrotherston/snort">my snort/suricata rules for interception detection</a> which also include coverage for <a href="http://blog.squarelemon.com/blog/2015/02/20/superfish-detection/">SuperFish</a>, <a href="http://blog.squarelemon.com/blog/2015/02/23/privdog-detection/">PrivDog</a> and the techniques described in my <a href="http://blog.squarelemon.com/blog/2014/12/29/bsides-toronto-video-and-slides/">Corporation in the Middle talk</a>.</p>
+
+<p>Any feedback on the rules are greatly appreciated.  Especially if anyone has particular successes to share of failures to highlight that I can use to improve the accuracy.  As always you can <a href="https://twitter.com/synackpse">reach me on twitter, I am @synackpse</a> or <a href="https://github.com/LeeBrotherston/snort/issues">raise an issue in github</a>.</p>
+
+      <br /><br />
+    </div>
+  </div>
+
+  <br /><br />
+
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+	
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-54930700-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+
+
+  </body>
+</html>
+

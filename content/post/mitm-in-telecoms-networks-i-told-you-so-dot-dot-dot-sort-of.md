@@ -1,0 +1,15 @@
++++
+title = "mitm in telecoms networks i told you so ... sort of"
+date = "2015-03-18"
+slug = "2015/03/18/mitm-in-telecoms-networks-i-told-you-so-dot-dot-dot-sort-of"
+Categories = []
++++
+For anyone that has read this blog before, you will probably know that at the end of 2014 I gave my "Corporation in The Middle" talk at both <a href="http://blog.squarelemon.com/blog/2014/10/29/corporation-in-the-middle/">SecTor</a> and <a href="http://blog.squarelemon.com/blog/2014/12/29/bsides-toronto-video-and-slides/">BSides Toronto</a>.  In short my ISP (<a href="http://www.rogers.com">Rogers</a>) used a platform to Man (Corporation) in The Middle my and every other customers connection in order to insert notification banners at the top of pages in certain circumstances, such approaching your bandwidth cap.  I argued during my "What Could Possibly Go Wrong?" section that even if my ISP was completely well intentioned that the mere presence of this platform presented a risk to customers.  What would happen if they had a rogue member of staff, became coerced in some way or were hacked?  A malicious 3rd party could use their platform to inject javascript to drop 0-day or socially engineer users with fake Flash or Java updates, for example.
+
+Then last night I read the article <i>"<a href="http://www.theglobeandmail.com/news/national/nsa-trying-to-map-rogers-rbc-communications-traffic-leak-shows/article23491118/">NSA trying to map Rogers, RBC communications traffic, leak shows</a>"</i> in The Globe and Mail.  It describes a leaked NSA document entitled <i>“Private Networks: Analysis, Contextualization and Setting the Vision”</i>, the article goes on to say <i>"A comparison of this document with previous Snowden leaks suggests it may be a preliminary step in broad efforts to identify, study and, if deemed necessary, “exploit” organizations’ internal communication networks."</i>.  Of course there are no details as to if this ever came to pass and if it did to what degree any penetration took place, however I believe that this does indeed demonstrate that my fears were not completely unfounded.
+
+If anybody were to penetrate the networks of any ISPs running tools such as this, these injection/interception platforms provide an easy mechanism to attack the customer base en mass.  To provide an indication of scale Perftech, the manufacturer of the platform used by my ISP, published in January that their <a href="http://www.perftech.com/newsroom/perftech-adds-telco-giant-roster-q4-grows-subscriber-reach-30-2014/">overall subscriber reach is currently 19.5 million</a>, and that's just one manufacturer.
+
+There are many platforms that "legitimately" Man in The Middle our communications, however, unless properly managed and secured they can become a very useful tool in an adversaries arsenal.
+
+Corporations which are targetted by nation state intelligence agencies are unlikely to successfully defend themselves.  Making announcements via these interception platforms as opposed to using something more (less?) transparent and obvious to the user removes the opportunity for the user to make informed security decisions.

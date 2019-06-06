@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    
+    <title>SquareLemon</title>
+
+    
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    
+    
+
+    <style>
+	body {
+		background: #52bee2;
+		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-size: 14px;
+		color: #000;
+		line-height: 1.5;
+	}
+	h1, h2, h3, h4 {
+		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		color: #000;
+	}
+	h1 {
+		font-size: 50px;
+	}
+	h2 {
+		font-size: 40px;
+	}
+	h3 {
+		font-size: 30px;
+	}
+	h4 {
+		font-size: 20px;
+		padding-top: 20px;
+	}
+	a {
+		color: #FF7056;
+	}
+	div {
+		border-radius: 15px;
+	}
+	code {
+		font-family: bold "Courier New", Courier, monospace;
+		color: black;
+		background: lightblue;
+	}
+	blockquote {
+	  font-family: Verdana, Geneva, sans-serif;
+	  border-left: 10px solid #000;
+	  margin: 1.5em 10px;
+	  padding: 0.5em 10px;
+	  quotes: "\201C""\201D""\2018""\2019";
+	}
+	blockquote:before {
+	  color: #000;
+	  content: open-quote;
+	  font-size: 4em;
+	  line-height: 0.1em;
+	  margin-right: 0.25em;
+	  vertical-align: -0.4em;
+	}
+	blockquote p {
+		  display: inline;
+	}
+	.post-meta {
+		color: grey;
+		font-style: italic;
+	}
+	@media (max-width: 992px) {
+	    h1 {
+		font-size: 20px;
+	    }
+	    body {
+		font-size: 16px;
+	    }
+
+	}
+    </style>
+  </head>
+  <body>
+
+  
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3" style="text-align: right;">
+                <h1>SquareLemon Blog</h1>
+                
+
+    </div>
+  </div>
+
+
+
+	
+  
+
+  
+  <div class="row">
+	<br />
+  </div>
+
+  
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3" style="background: #AEE5F7; border-color: white; border-style: solid;">
+	  <a href="/fingerprintls/">
+        <h2>FingerPrintTLS</h2> 
+          	  
+          	  <h3 class="post-subtitle">
+          	    Example use cases
+          	  </h3>
+          	    
+      </a>
+      <p class="post-meta">Posted on August 2, 2016</p>
+		
+
+<h4 id="introduction">Introduction</h4>
+
+<p><a href="https://www.github.com/leebrotherston/tls-fingerprinting/">FingerprinTLS</a> is a tool used to perform <a href="https://squarelemon.com/tls-fingerprinting/">TLS Fingerprinting</a> either via realtime sniffing of an network interface or via reading a PCAP file from the filesystem.</p>
+
+<p>At the time of writing the main features are:</p>
+
+<ul>
+<li>Detection of:
+
+<ul>
+<li>TLS connection irrespective of port numbers or IP addresses</li>
+<li>Detection within IPv4, IPv6, 6in4, 6rd, and Teredo packets.</li>
+<li>Detection within 802.1Q packets.</li>
+</ul></li>
+<li>Logging of events to JSON format log</li>
+<li>Automatic fingerprinting of unknown connections</li>
+<li>Export of unknown fingerprints (JSON format)</li>
+<li>Save client hello packets of unrecognized connections to a separate PCAP.</li>
+<li>Dropping privileges to avoid running as root</li>
+</ul>
+
+<p>This list, however, does not make all the potential use cases immediately evident.  Let&rsquo;s start with the most obvious&hellip;.</p>
+
+<h4 id="supplementing-ids">Supplementing IDS</h4>
+
+<p>Lots of people use an IDS or IPS on their network.  However unless the IDS has access to cryptographic keying material, which in itself is a bad idea, it will be blind to data which is encrypted on the network.  IDS systems do have the ability to alert on issues surrounding the TLS handshakes themselves, such as HeartBleed, however they are typically blind to TLS encrypted data.</p>
+
+<p>So how does <a href="https://www.github.com/leebrotherston/tls-fingerprinting/">FingerPrinTLS</a> help?  Although it cannot determine the complete unencrypted payload, by being able to identify what the TLS clients responsible for each connection on your network are, there is a lot of useful information which can be derived.</p>
+
+<p>For example:</p>
+
+<ul>
+<li><p><em>Potential Data Exfiltration Tools</em>.  Many companies worry about losing data, <a href="https://www.github.com/leebrotherston/tls-fingerprinting/">FingerPrinTLS</a> can detect connections such as Tor, DropBox, and Google Drive; and differentiate them from other HTTPS traffic.</p></li>
+
+<li><p><em>Unauthorized applications</em>.  If your network is designed to only run specific tools, detection of any other tool is a useful indicator of something beting amiss.</p></li>
+
+<li><p><em>Malware</em> is increasing utilizing TLS to mask it&rsquo;s activities.  Detection of malware communications to command and control infrastructure is a good indicator that something could be infected.  Additionally, because the TLS <a href="https://squarelemon.com/tls-fingerprinting/">Fingerprint</a> is being matched, there is no reliance on blacklists remaining up to date with IP address lists.</p></li>
+</ul>
+
+<p>So, how we do we detect this?  Using the example that the device <code>eth1</code> is connected to a span port, or any other means of recieving sniffed packets for that matter&hellip;</p>
+
+<p><code>sudo ./fingerprintls -i eth1 -j new_fingerprints.json -l event_log.json -p new_fingerprint_samples.pcap -u unpriv_user</code></p>
+
+<p>Will start the packetsniffer and:</p>
+
+<ul>
+<li>Log all recognised events to the file <code>event_log.json</code></li>
+<li>Dynamically generate fingerprints for unrecognized connections (this is default)</li>
+<li>Log all unrecognised fingerprints to <code>new_fingerprints.json</code></li>
+<li>Keep a sample of unrecognised connections in <code>new_fingerprint_samples.pcap</code></li>
+<li>Drop privileges to run as <code>unpriv_user</code></li>
+</ul>
+
+<p>The event_log.json will produce output with one entry per line in the following format:</p>
+
+<p><code>{ &quot;timestamp&quot;: &quot;2016-08-01 00:00:00&quot;, &quot;event&quot;: &quot;fingerprint_match&quot;,  &quot;ip_version&quot;: &quot;ipv4&quot;,  &quot;ipv4_src&quot;: &quot;192.168.1.1&quot;,  &quot;ipv4_dst&quot;: &quot;192.168.255.254&quot;, &quot;src_port&quot;: 31337, &quot;dst_port&quot;: 443, &quot;tls_version&quot;: &quot;TLSv1.2&quot;, &quot;fingerprint_desc&quot;: &quot;Chrome 47&quot;, &quot;server_name&quot;: &quot;some.host.com&quot; }</code></p>
+
+<p>Although it contains all the information in an easy to search and consume format, it&rsquo;s not perfect for tailing and so I have written parselog.py, which tails the log and creates a slightly more human readable format output:</p>
+
+<p><code>2016-08-01 00:00:00 &quot;Chrome 47&quot; TLSv1.2 connection to &quot;some.host.com&quot;  192.168.1.1:31337 -&gt; 192.168.255.254 443  (ipv4)</code></p>
+
+<h4 id="malware-hunting-and-enhancing-threatintel-sorry-feeds">Malware hunting and enhancing ThreatIntel(sorry!) Feeds</h4>
+
+<p>Yeah, that makes no sense to me either&hellip;  However if you are a fan of threat intelligence and/or hunting out malware on your network then you can use <a href="https://www.github.com/leebrotherston/tls-fingerprinting/">FingerPrinTLS</a> to supplement and update your feeds.  Let&rsquo;s take this example&hellip;</p>
+
+<p>You running as an IDS supplement as described above, and the <a href="https://www.github.com/leebrotherston/tls-fingerprinting/">FingerPrinTLS</a> does not recognise a connection, and so it dynamically creates a new fingerprint, for the sake of argument &ldquo;Unknown Fingerprint 3&rdquo;.  However either via antivirus alerts or via a black list or some other mechanism you determine that the connection is some sort of malware calling home.</p>
+
+<p>Even thought <a href="https://www.github.com/leebrotherston/tls-fingerprinting/">FingerPrinTLS</a> did not have a fingerprint in it&rsquo;s internal database to start with, it does now, it&rsquo;s just not labelled as such.  You can grep through the event_log.json searching for all instances of &ldquo;Unknown Fingerprint 3&rdquo; and determine all infected hosts within your network (by source address).  Next you can map out command and control infrastructure by using all the destination addresses, and supplement your ThreatIntelBlackList&trade; with additional IP addresses to be aware of.</p>
+
+<h4 id="protecting-api-endpoints-and-web-servers">Protecting API endpoints and Web Servers</h4>
+
+<p>For many people Web Servers and API Endpoints need to be exposed to the public internet.  This is, after all, pretty much the point much of the time.  <a href="https://www.github.com/leebrotherston/tls-fingerprinting/">FingerPrinTLS</a> can be used to determine the validity of connections to those endpoints&hellip;</p>
+
+<p>Granted this is not (yet&hellip; I&rsquo;m working on it!) completely automated, however at the very least as a detective control this can work.</p>
+
+<p>By running <a href="https://www.github.com/leebrotherston/tls-fingerprinting/">FingerPrinTLS</a> in a location where it can monitor internet traffic connecting to your web server or API endpoints you can gather some fairly useful information.  For example if your website starts to receive connections from clients which appear to be BurpSuite, SQLMap, or Metasploit, you may wish to pay attention to what requests are being made from those connections.  Other clients such as curl and wget can be completely innocent, however if they are not expected in the environment then they may also be worthy of scrutiny.</p>
+
+<h4 id="canaries-for-unicorns">Canaries for Unicorns</h4>
+
+<p>Let&rsquo;s take an example, you run API endpoint, which is only expected to receive connections to by your own application, examples that spring to mind are: Netflix, Uber, and Slack.  You can run <a href="https://www.github.com/leebrotherston/tls-fingerprinting/">FingerPrinTLS</a> with a very minimal fingerprint database consisting entirely of the fingerprints for your own application.  If you see a connection from <em>anything</em> else, you can investigate.</p>
+
+      <br /><br />
+    </div>
+  </div>
+
+  <br /><br />
+
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+	
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-54930700-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+
+
+  </body>
+</html>
+

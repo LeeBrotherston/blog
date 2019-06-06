@@ -1,0 +1,69 @@
+{{ partial "header.html" . }}
+
+  <!-- Spacer -->
+  <div class="row">
+	<br />
+  </div>
+  <!-- Posts -->
+
+  {{ $pag := .Paginate (where .Data.Pages "Type" "post") }}
+  {{ range $pag.Pages }}
+
+  <!-- Spacer -->
+  <div class="row">
+	<br />
+  </div>
+
+  <!-- Post Preview -->
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3" style="background: #AEE5F7; border-color: white; border-style: solid;">
+	  <a href="{{ .Permalink }}">
+        <h2>{{ .Title }}</h2> 
+          	  {{ if .Params.subtitle }}
+          	  <h3 class="post-subtitle">
+          	    {{ .Params.subtitle }}
+          	  </h3>
+          	  {{ end }}  
+      </a>
+      <p class="post-meta">Posted on {{ .Date.Format "January 2, 2006" }}</p>
+      {{ .Summary }}
+      <a href="{{ .Permalink }}" class="post-read-more">[Read&nbsp;More]</a>
+      <br /><br />
+    </div>
+  </div>
+
+  {{ end }}
+
+
+  <!-- Paginator -->
+  <div class="row">
+
+  {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+  <!-- Spacer -->
+  <div class="row">
+	<br />
+  </div>
+
+  {{ if .Paginator.HasPrev }}
+  <div class="col-xs-2 col-xs-offset-1 col-md-2 col-md-offset-3" style="background: #FF8607; border-color: white; border-style: solid; text-align: left">
+    <a href="{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}" style="color: white;">&larr; Newer Posts</a>
+  </div>
+  {{ else }}
+	<div class="col-xs-2 col-xs-offset-1 col-md-2 col-md-offset-3"></div>
+  {{ end }}
+
+  <div class="col-xs-6 col-md-2">
+  </div>
+
+  {{ if .Paginator.HasNext }}
+  <div class="col-xs-2 col-md-2" style="background: #FF8607; a.color: white; border-color: white; border-style: solid; text-align: right;">
+    <a href="{{ .URL }}page/{{ .Paginator.Next.PageNumber }}" style="color: white;">Older Posts &rarr;</a>
+  </div>
+  {{ else }}
+  <div class="col-xs-2 col-md-2">
+  {{ end }}
+  <br /><br /><br />
+  {{ end }}
+
+
+{{ partial "footer.html" . }}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    
+    <title>SquareLemon</title>
+
+    
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    
+    
+
+    <style>
+	body {
+		background: #52bee2;
+		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-size: 14px;
+		color: #000;
+		line-height: 1.5;
+	}
+	h1, h2, h3, h4 {
+		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		color: #000;
+	}
+	h1 {
+		font-size: 50px;
+	}
+	h2 {
+		font-size: 40px;
+	}
+	h3 {
+		font-size: 30px;
+	}
+	h4 {
+		font-size: 20px;
+		padding-top: 20px;
+	}
+	a {
+		color: #FF7056;
+	}
+	div {
+		border-radius: 15px;
+	}
+	code {
+		font-family: bold "Courier New", Courier, monospace;
+		color: black;
+		background: lightblue;
+	}
+	blockquote {
+	  font-family: Verdana, Geneva, sans-serif;
+	  border-left: 10px solid #000;
+	  margin: 1.5em 10px;
+	  padding: 0.5em 10px;
+	  quotes: "\201C""\201D""\2018""\2019";
+	}
+	blockquote:before {
+	  color: #000;
+	  content: open-quote;
+	  font-size: 4em;
+	  line-height: 0.1em;
+	  margin-right: 0.25em;
+	  vertical-align: -0.4em;
+	}
+	blockquote p {
+		  display: inline;
+	}
+	.post-meta {
+		color: grey;
+		font-style: italic;
+	}
+	@media (max-width: 992px) {
+	    h1 {
+		font-size: 20px;
+	    }
+	    body {
+		font-size: 16px;
+	    }
+
+	}
+    </style>
+  </head>
+  <body>
+
+  
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3" style="text-align: right;">
+                <h1>SquareLemon Blog</h1>
+                
+
+    </div>
+  </div>
+
+
+
+	
+  
+  <div class="row">
+	<br />
+  </div>
+
+  
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3" style="background: #AEE5F7; border-color: white; border-style: solid;">
+	  <a href="/2015/01/mitm-at-30000-feet/">
+        <h2>mitm at 30,000 feet</h2> 
+          	    
+      </a>
+      <p class="post-meta">Posted on January 4, 2015</p>
+		<p>In the past week I have seen a few mentions on twitter regarding <a href="http://twitter.com/gogo">Gogo Air</a> presenting fake SSL certs for YouTube to users of their in air Internet access service:<br /><!-- More --></p>
+
+<p><blockquote class="twitter-tweet" lang="en"><p>hey <a href="https://twitter.com/Gogo">@Gogo</a>, why are you issuing *.google.com certificates on your planes? <a href="http://t.co/UmpIQ2pDaU">pic.twitter.com/UmpIQ2pDaU</a></p>&mdash; Adrienne Porter Felt (@<strong>apf</strong>) <a href="https://twitter.com/__apf__/status/551083956326920192">January 2, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><br /></p>
+
+<p><blockquote class="twitter-tweet" lang="en"><p>No, not OK. <a href="https://twitter.com/Gogo">@Gogo</a> please justify breaking the Internet for your paying users. Huge privacy connotations! <a href="http://t.co/AxZOPEK0oO">pic.twitter.com/AxZOPEK0oO</a></p>&mdash; Ben Hughes (@benjammingh) <a href="https://twitter.com/benjammingh/status/551589274123247616">January 4, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><br /></p>
+
+<p>I started to wonder if they were using the same technique that I had recently been researching and discussing in my <a href="http://blog.squarelemon.com/blog/2014/10/29/corporation-in-the-middle/">Corporation in The Middle</a> talk.  Luckily for me, my friend <a href="https://twitter.com/benjammingh/">Benjammingh</a> was one of those who noticed and was currently on a Gogo flight, so I asked him to take a packetdump for analysis.<br /><br /><!-- More --></p>
+
+<p>The short summary is that this is not the same technique, in fact this looks like in-flight transparent proxying&hellip;.<br /><br /></p>
+
+<p>For one thing there is this giveaway in the http response header:<br /></p>
+
+<pre><code>    X-Cache: MISS from 172.19.134.2
+    X-Cache-Lookup: MISS from 172.19.134.2:3128
+    Via: 1.0 172.19.134.2:3128 (squid/2.6.STABLE14)
+</code></pre>
+
+<p><br />
+This is indeed squid, quite an old install of squid, on the default port.<br /><br /></p>
+
+<p>Secondly, the TTL on all the packets was 64.  Now, most OS&rsquo;s tend to use round numbers for default TTL values (32, 64, 128).  Assuming this to be the case, this would indicate that either YouTube is exactly 64 hops away or the packets are originating from the local network segment, which would be consistent with a local (transparent) proxy.
+<br />
+It&rsquo;s hardly an in-depth analysis, but at this point it seems to be more than we have at the minute, and it would explain how they are Man in The Middle&rsquo;ing the connection, the question still remains&hellip;. why?</p>
+
+      <br /><br />
+    </div>
+  </div>
+
+  <br /><br />
+
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+	
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-54930700-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+
+
+  </body>
+</html>
+

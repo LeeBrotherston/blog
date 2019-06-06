@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    
+    <title>SquareLemon</title>
+
+    
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    
+    
+
+    <style>
+	body {
+		background: #52bee2;
+		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-size: 14px;
+		color: #000;
+		line-height: 1.5;
+	}
+	h1, h2, h3, h4 {
+		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		color: #000;
+	}
+	h1 {
+		font-size: 50px;
+	}
+	h2 {
+		font-size: 40px;
+	}
+	h3 {
+		font-size: 30px;
+	}
+	h4 {
+		font-size: 20px;
+		padding-top: 20px;
+	}
+	a {
+		color: #FF7056;
+	}
+	div {
+		border-radius: 15px;
+	}
+	code {
+		font-family: bold "Courier New", Courier, monospace;
+		color: black;
+		background: lightblue;
+	}
+	blockquote {
+	  font-family: Verdana, Geneva, sans-serif;
+	  border-left: 10px solid #000;
+	  margin: 1.5em 10px;
+	  padding: 0.5em 10px;
+	  quotes: "\201C""\201D""\2018""\2019";
+	}
+	blockquote:before {
+	  color: #000;
+	  content: open-quote;
+	  font-size: 4em;
+	  line-height: 0.1em;
+	  margin-right: 0.25em;
+	  vertical-align: -0.4em;
+	}
+	blockquote p {
+		  display: inline;
+	}
+	.post-meta {
+		color: grey;
+		font-style: italic;
+	}
+	@media (max-width: 992px) {
+	    h1 {
+		font-size: 20px;
+	    }
+	    body {
+		font-size: 16px;
+	    }
+
+	}
+    </style>
+  </head>
+  <body>
+
+  
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3" style="text-align: right;">
+                <h1>SquareLemon Blog</h1>
+                
+
+    </div>
+  </div>
+
+
+
+	
+  
+  <div class="row">
+	<br />
+  </div>
+
+  
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3" style="background: #AEE5F7; border-color: white; border-style: solid;">
+	  <a href="/2015/03/mitm-in-telecoms-networks-i-told-you-so-...-sort-of/">
+        <h2>mitm in telecoms networks i told you so ... sort of</h2> 
+          	    
+      </a>
+      <p class="post-meta">Posted on March 18, 2015</p>
+		<p>For anyone that has read this blog before, you will probably know that at the end of 2014 I gave my &ldquo;Corporation in The Middle&rdquo; talk at both <a href="http://blog.squarelemon.com/blog/2014/10/29/corporation-in-the-middle/">SecTor</a> and <a href="http://blog.squarelemon.com/blog/2014/12/29/bsides-toronto-video-and-slides/">BSides Toronto</a>.  In short my ISP (<a href="http://www.rogers.com">Rogers</a>) used a platform to Man (Corporation) in The Middle my and every other customers connection in order to insert notification banners at the top of pages in certain circumstances, such approaching your bandwidth cap.  I argued during my &ldquo;What Could Possibly Go Wrong?&rdquo; section that even if my ISP was completely well intentioned that the mere presence of this platform presented a risk to customers.  What would happen if they had a rogue member of staff, became coerced in some way or were hacked?  A malicious 3rd party could use their platform to inject javascript to drop 0-day or socially engineer users with fake Flash or Java updates, for example.</p>
+
+<p>Then last night I read the article <i>&ldquo;<a href="http://www.theglobeandmail.com/news/national/nsa-trying-to-map-rogers-rbc-communications-traffic-leak-shows/article23491118/">NSA trying to map Rogers, RBC communications traffic, leak shows</a>&ldquo;</i> in The Globe and Mail.  It describes a leaked NSA document entitled <i>“Private Networks: Analysis, Contextualization and Setting the Vision”</i>, the article goes on to say <i>&ldquo;A comparison of this document with previous Snowden leaks suggests it may be a preliminary step in broad efforts to identify, study and, if deemed necessary, “exploit” organizations’ internal communication networks.&rdquo;</i>.  Of course there are no details as to if this ever came to pass and if it did to what degree any penetration took place, however I believe that this does indeed demonstrate that my fears were not completely unfounded.</p>
+
+<p>If anybody were to penetrate the networks of any ISPs running tools such as this, these injection/interception platforms provide an easy mechanism to attack the customer base en mass.  To provide an indication of scale Perftech, the manufacturer of the platform used by my ISP, published in January that their <a href="http://www.perftech.com/newsroom/perftech-adds-telco-giant-roster-q4-grows-subscriber-reach-30-2014/">overall subscriber reach is currently 19.5 million</a>, and that&rsquo;s just one manufacturer.</p>
+
+<p>There are many platforms that &ldquo;legitimately&rdquo; Man in The Middle our communications, however, unless properly managed and secured they can become a very useful tool in an adversaries arsenal.</p>
+
+<p>Corporations which are targetted by nation state intelligence agencies are unlikely to successfully defend themselves.  Making announcements via these interception platforms as opposed to using something more (less?) transparent and obvious to the user removes the opportunity for the user to make informed security decisions.</p>
+
+      <br /><br />
+    </div>
+  </div>
+
+  <br /><br />
+
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+	
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-54930700-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+
+
+  </body>
+</html>
+
