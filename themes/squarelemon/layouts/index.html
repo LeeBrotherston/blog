@@ -46,7 +46,7 @@
 
   {{ if .Paginator.HasPrev }}
   <div class="col-xs-2 col-xs-offset-1 col-md-2 col-md-offset-3" style="background: #FF8607; border-color: white; border-style: solid; text-align: left">
-    <a href="{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}" style="color: white;">&larr; Newer Posts</a>
+    <a href="{{ .Permalink }}page/{{ .Paginator.Prev.PageNumber }}" style="color: white;">&larr; Newer Posts</a>
   </div>
   {{ else }}
 	<div class="col-xs-2 col-xs-offset-1 col-md-2 col-md-offset-3"></div>
@@ -57,7 +57,7 @@
 
   {{ if .Paginator.HasNext }}
   <div class="col-xs-2 col-md-2" style="background: #FF8607; a.color: white; border-color: white; border-style: solid; text-align: right;">
-    <a href="{{ .URL }}page/{{ .Paginator.Next.PageNumber }}" style="color: white;">Older Posts &rarr;</a>
+    <a href="{{ .Permalink }}page/{{ .Paginator.Next.PageNumber }}" style="color: white;">Older Posts &rarr;</a>
   </div>
   {{ else }}
   <div class="col-xs-2 col-md-2">

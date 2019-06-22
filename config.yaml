@@ -1,7 +1,8 @@
-baseurl : "/"
+baseurl : /
 title : "SquareLemon Blog"
 permalinks:
     post: /:year/:month/:title/
 relativeURLS: false
 googleAnalytics: "UA-54930700-1"
-theme: "squarelemon"
+theme: squarelemon
+#theme: testicles
