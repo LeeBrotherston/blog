@@ -1,177 +1,105 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-06-15T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+    <lastmod>2019-06-19T22:46:09-04:00</lastmod>
+  </url><url>
     <loc>/2019/06/so-you-got-hacked-what-now/</loc>
-    <lastmod>2019-06-15T10:54:24+02:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2019-06-19T22:46:09-04:00</lastmod>
+  </url><url>
     <loc>/</loc>
-    <lastmod>2019-06-15T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+    <lastmod>2019-06-19T22:46:09-04:00</lastmod>
+  </url><url>
     <loc>/2016/11/use-signal-use-tor/</loc>
     <lastmod>2016-11-09T23:49:16-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2016/10/sector-2016-presentation/</loc>
     <lastmod>2016-10-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2016/08/fingerprintls-example-use-cases/</loc>
     <lastmod>2016-08-02T12:14:52-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/fingerprintls/</loc>
     <lastmod>2016-08-02T11:17:02-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2016/01/things-are-coming.../</loc>
     <lastmod>2016-01-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tls-fingerprinting/</loc>
     <lastmod>2015-09-25T09:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2015/09/tls-fingerprinting-resources/</loc>
     <lastmod>2015-09-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2015/09/yes-ive-been-quiet/</loc>
     <lastmod>2015-09-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2015/06/mitm-the-mitmers/</loc>
     <lastmod>2015-06-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2015/06/sc-congress-toronto/</loc>
     <lastmod>2015-06-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2015/05/bsides-toronto-2015-is-coming.../</loc>
     <lastmod>2015-05-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2015/05/stealthier-attacks-and-smarter-defending-with-tls-fingerprinting/</loc>
     <lastmod>2015-05-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2015/03/mitm-in-telecoms-networks-i-told-you-so-...-sort-of/</loc>
     <lastmod>2015-03-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2015/03/quick-and-dirty-crapware-analysis-ids-rule-creation-foo/</loc>
     <lastmod>2015-03-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2015/02/privdog-detection/</loc>
     <lastmod>2015-02-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2015/02/superfish-detection/</loc>
     <lastmod>2015-02-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2015/02/man-in-the-middle-reach-grows/</loc>
     <lastmod>2015-02-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2015/02/the-value-of-cloud-security-report/</loc>
     <lastmod>2015-02-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2015/02/os-x-sandbox-quickstart/</loc>
     <lastmod>2015-02-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2015/02/brakeing-down-security-podcast-isp-man-in-the-middle/</loc>
     <lastmod>2015-02-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2015/02/brakeing-down-security-podcast-threat-modeling/</loc>
     <lastmod>2015-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2015/01/citm-snort-rules/</loc>
     <lastmod>2015-01-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2015/01/mitm-at-30000-feet/</loc>
     <lastmod>2015-01-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2015/01/no-we-dont/</loc>
     <lastmod>2015-01-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2014/12/bsides-toronto-video-and-slides/</loc>
     <lastmod>2014-12-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2014/11/corporation-in-the-middle-blog-edition/</loc>
     <lastmod>2014-11-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2014/10/corporation-in-the-middle/</loc>
     <lastmod>2014-10-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2014/07/is-your-eula-lowering-your-application-security/</loc>
     <lastmod>2014-07-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/2014/05/sector-2014/</loc>
     <lastmod>2014-05-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/</loc>
-    <priority>0</priority>
   </url>
-  
 </urlset>

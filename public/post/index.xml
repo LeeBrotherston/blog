@@ -1,19 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on SquareLemon Blog</title>
     <link>/post/</link>
     <description>Recent content in Posts on SquareLemon Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 15 Jun 2019 10:54:24 +0200</lastBuildDate>
-    
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language>
+    <lastBuildDate>Wed, 19 Jun 2019 22:46:09 -0400</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>So you got hacked, what now?</title>
       <link>/2019/06/so-you-got-hacked-what-now/</link>
-      <pubDate>Sat, 15 Jun 2019 10:54:24 +0200</pubDate>
+      <pubDate>Wed, 19 Jun 2019 22:46:09 -0400</pubDate>
       
       <guid>/2019/06/so-you-got-hacked-what-now/</guid>
       <description>If you have just found out that one of your accounts has been hacked, you probably have a lot of questions. One of which is how to you undo whatever has been done and regain control. This is a good first question and I will attempt to cover this and the accompanying &amp;ldquo;how did this happen?&amp;rdquo;. The why and the who part can be more nuanced and very contextual so I&amp;rsquo;m going to steer away from that for now.</description>
@@ -36,7 +33,7 @@ We often hear &amp;quot;Use signal, use tor&amp;quot; mentioned. It has become a
       
       <guid>/2016/10/sector-2016-presentation/</guid>
       <description>A week ago I gave my talk &amp;ldquo;[Ab]Using TLS for Defensive Wins&amp;rdquo; at SecTor 2016. Here is my little blurb:
- TLS, and it’s older forerunner SSL, are used to maintain the confidentiality and integrity of network communications. This is a double edged sword for Information Security departments as this allows private information to remain private, but can also be used to hide malicious activity.
+TLS, and it’s older forerunner SSL, are used to maintain the confidentiality and integrity of network communications. This is a double edged sword for Information Security departments as this allows private information to remain private, but can also be used to hide malicious activity.
 Current defensive measures for dealing with network traffic encrypted using TLS typically takes one of two forms; attempting to detect malicious activities via other means which are outside of the encrypted session, such as endpoint security tools and IP address blacklists.</description>
     </item>
     
@@ -47,7 +44,7 @@ Current defensive measures for dealing with network traffic encrypted using TLS 
       
       <guid>/2016/08/fingerprintls-example-use-cases/</guid>
       <description>I have unbroken my blog, so in preparation for BlackHat Arsenal I have written up a few use cases for FingerPrinTLS. The specific examples I have given are:
- Supplementing IDS Malware hunting and enhancing ThreatIntel(sorry!) Feeds Protecting API endpoints and Web Servers Canaries for Unicorns  Enjoy!</description>
+Supplementing IDS Malware hunting and enhancing ThreatIntel(sorry!) Feeds Protecting API endpoints and Web Servers Canaries for Unicorns Enjoy!</description>
     </item>
     
     <item>
@@ -56,8 +53,7 @@ Current defensive measures for dealing with network traffic encrypted using TLS 
       <pubDate>Sat, 09 Jan 2016 00:00:00 +0000</pubDate>
       
       <guid>/2016/01/things-are-coming.../</guid>
-      <description>I realise that I have not posted for a while, so I just wanted to drop a quick mini-post&amp;rsquo;ette to say that I have been working hard on a number of things to do with my TLS Fingerprinting side project. If you keep track of my GitHub page you&amp;rsquo;ll probably see the fruits of my labour first.
-I&amp;rsquo;m planning on creating a number of posts on using the FingerPrinTLS tool once I have a few more key items in.</description>
+      <description>I realise that I have not posted for a while, so I just wanted to drop a quick mini-post&amp;rsquo;ette to say that I have been working hard on a number of things to do with my TLS Fingerprinting side project. If you keep track of my GitHub page you&amp;rsquo;ll probably see the fruits of my labour first. I&amp;rsquo;m planning on creating a number of posts on using the FingerPrinTLS tool once I have a few more key items in.</description>
     </item>
     
     <item>
@@ -67,7 +63,7 @@ I&amp;rsquo;m planning on creating a number of posts on using the FingerPrinTLS 
       
       <guid>/2015/09/tls-fingerprinting-resources/</guid>
       <description>Today I gave my talk at DerbyCon, &amp;ldquo;Stealthier Attacks &amp;amp; Smarter Defending with TLS Fingerprinting&amp;rdquo;. The links to all the resources are:
- Paper / Post giving a technical overview of the fingerprinting technique discussed. Slides from the talk, which probably don&amp;rsquo;t make much sense without the talk. Tools discussed during the talk  Don&amp;rsquo;t forget to join in the conversation on twitter too either to my account or the FingerprinTLS account.</description>
+Paper / Post giving a technical overview of the fingerprinting technique discussed. Slides from the talk, which probably don&amp;rsquo;t make much sense without the talk. Tools discussed during the talk Don&amp;rsquo;t forget to join in the conversation on twitter too either to my account or the FingerprinTLS account.</description>
     </item>
     
     <item>
@@ -96,8 +92,7 @@ I&amp;rsquo;m planning on creating a number of posts on using the FingerPrinTLS 
       <guid>/2015/06/sc-congress-toronto/</guid>
       <description>Yesterday James Arlen and I gave the closing Keynote at SC Congress Toronto.
 If you would like to see the slides, we have made the available on slideshare:
- And the pre-recorded demo is available here (the live demo was, unfortunately, not recorded):
- </description>
+And the pre-recorded demo is available here (the live demo was, unfortunately, not recorded):</description>
     </item>
     
     <item>
@@ -118,7 +113,7 @@ I won&amp;rsquo;t be speaking this year because I have the pleasure of taking on
       
       <guid>/2015/05/stealthier-attacks-and-smarter-defending-with-tls-fingerprinting/</guid>
       <description>I am really pleased to announce that I have decided to try my hand at talking at conferences again this year and have a new talk ready &amp;ldquo;Stealthier Attacks and Smarter Defending with TLS Fingerprinting&amp;rdquo;. Despite being a talk on TLS (and SSL) there isn&amp;rsquo;t any complex crypto or mathematics, this is aimed at defenders and attackers rather than cryptographers. Here&amp;rsquo;s the abstract:
- Ever been busted because you man in the middle software (which does TLS properly) alerted someone to your bad certificate?</description>
+Ever been busted because you man in the middle software (which does TLS properly) alerted someone to your bad certificate?</description>
     </item>
     
     <item>
@@ -146,7 +141,8 @@ In those posts I mentioned that CipherSuite fingerprinting was the key to creati
       <pubDate>Mon, 23 Feb 2015 00:00:00 +0000</pubDate>
       
       <guid>/2015/02/privdog-detection/</guid>
-      <description>In much the same way as I was able to detect hosts infected with SuperFish by profiling the changes in Cipher Suites used in their SSL connections (by virtue of SuperFish essentially having it&amp;rsquo;s own SSL client) I have been able to create a fingerprint for PrivDog. For those who are interested, the ciphersuites used by the PrivDog client are: Cipher Suites (44 suites) Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014) Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA (0xc00a) Cipher Suite: TLS_SRP_SHA_DSS_WITH_AES_256_CBC_SHA (0xc022) Cipher Suite: TLS_SRP_SHA_RSA_WITH_AES_256_CBC_SHA (0xc021) Cipher Suite: TLS_DHE_RSA_WITH_AES_256_CBC_SHA (0x0039) Cipher Suite: TLS_DHE_DSS_WITH_AES_256_CBC_SHA (0x0038) Cipher Suite: TLS_ECDH_RSA_WITH_AES_256_CBC_SHA (0xc00f) Cipher Suite: TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA (0xc005) Cipher Suite: TLS_RSA_WITH_AES_256_CBC_SHA (0x0035) Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (0xc013) Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA (0xc009) Cipher Suite: TLS_SRP_SHA_DSS_WITH_AES_128_CBC_SHA (0xc01f) Cipher Suite: TLS_SRP_SHA_RSA_WITH_AES_128_CBC_SHA (0xc01e) Cipher Suite: TLS_DHE_RSA_WITH_AES_128_CBC_SHA (0x0033) Cipher Suite: TLS_DHE_DSS_WITH_AES_128_CBC_SHA (0x0032) Cipher Suite: TLS_ECDH_RSA_WITH_AES_128_CBC_SHA (0xc00e) Cipher Suite: TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA (0xc004) Cipher Suite: TLS_RSA_WITH_AES_128_CBC_SHA (0x002f) Cipher Suite: TLS_ECDHE_RSA_WITH_RC4_128_SHA (0xc011) Cipher Suite: TLS_ECDHE_ECDSA_WITH_RC4_128_SHA (0xc007) Cipher Suite: TLS_ECDH_RSA_WITH_RC4_128_SHA (0xc00c) Cipher Suite: TLS_ECDH_ECDSA_WITH_RC4_128_SHA (0xc002) Cipher Suite: TLS_RSA_WITH_RC4_128_SHA (0x0005) Cipher Suite: TLS_RSA_WITH_RC4_128_MD5 (0x0004) Cipher Suite: TLS_DHE_RSA_WITH_SEED_CBC_SHA (0x009a) Cipher Suite: TLS_DHE_DSS_WITH_SEED_CBC_SHA (0x0099) Cipher Suite: TLS_RSA_WITH_SEED_CBC_SHA (0x0096) Cipher Suite: TLS_DHE_RSA_WITH_DES_CBC_SHA (0x0015) Cipher Suite: TLS_DHE_DSS_WITH_DES_CBC_SHA (0x0012) Cipher Suite: TLS_RSA_WITH_DES_CBC_SHA (0x0009) Cipher Suite: TLS_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA (0x0014) Cipher Suite: TLS_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA (0x0011) Cipher Suite: TLS_RSA_EXPORT_WITH_DES40_CBC_SHA (0x0008) Cipher Suite: TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA (0xc012) Cipher Suite: TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA (0xc008) Cipher Suite: TLS_SRP_SHA_DSS_WITH_3DES_EDE_CBC_SHA (0xc01c) Cipher Suite: TLS_SRP_SHA_RSA_WITH_3DES_EDE_CBC_SHA (0xc01b) Cipher Suite: TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA (0x0016) Cipher Suite: TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA (0x0013) Cipher Suite: TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA (0xc00d) Cipher Suite: TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA (0xc003) Cipher Suite: TLS_RSA_WITH_3DES_EDE_CBC_SHA (0x000a) Cipher Suite: TLS_RSA_WITH_IDEA_CBC_SHA (0x0007) Cipher Suite: TLS_EMPTY_RENEGOTIATION_INFO_SCSV (0x00ff)  I have updated my Interception Snort Rules to include this.</description>
+      <description>In much the same way as I was able to detect hosts infected with SuperFish by profiling the changes in Cipher Suites used in their SSL connections (by virtue of SuperFish essentially having it&amp;rsquo;s own SSL client) I have been able to create a fingerprint for PrivDog. For those who are interested, the ciphersuites used by the PrivDog client are:
+Cipher Suites (44 suites) Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014) Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA (0xc00a) Cipher Suite: TLS_SRP_SHA_DSS_WITH_AES_256_CBC_SHA (0xc022) Cipher Suite: TLS_SRP_SHA_RSA_WITH_AES_256_CBC_SHA (0xc021) Cipher Suite: TLS_DHE_RSA_WITH_AES_256_CBC_SHA (0x0039) Cipher Suite: TLS_DHE_DSS_WITH_AES_256_CBC_SHA (0x0038) Cipher Suite: TLS_ECDH_RSA_WITH_AES_256_CBC_SHA (0xc00f) Cipher Suite: TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA (0xc005) Cipher Suite: TLS_RSA_WITH_AES_256_CBC_SHA (0x0035) Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (0xc013) Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA (0xc009) Cipher Suite: TLS_SRP_SHA_DSS_WITH_AES_128_CBC_SHA (0xc01f) Cipher Suite: TLS_SRP_SHA_RSA_WITH_AES_128_CBC_SHA (0xc01e) Cipher Suite: TLS_DHE_RSA_WITH_AES_128_CBC_SHA (0x0033) Cipher Suite: TLS_DHE_DSS_WITH_AES_128_CBC_SHA (0x0032) Cipher Suite: TLS_ECDH_RSA_WITH_AES_128_CBC_SHA (0xc00e) Cipher Suite: TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA (0xc004) Cipher Suite: TLS_RSA_WITH_AES_128_CBC_SHA (0x002f) Cipher Suite: TLS_ECDHE_RSA_WITH_RC4_128_SHA (0xc011) Cipher Suite: TLS_ECDHE_ECDSA_WITH_RC4_128_SHA (0xc007) Cipher Suite: TLS_ECDH_RSA_WITH_RC4_128_SHA (0xc00c) Cipher Suite: TLS_ECDH_ECDSA_WITH_RC4_128_SHA (0xc002) Cipher Suite: TLS_RSA_WITH_RC4_128_SHA (0x0005) Cipher Suite: TLS_RSA_WITH_RC4_128_MD5 (0x0004) Cipher Suite: TLS_DHE_RSA_WITH_SEED_CBC_SHA (0x009a) Cipher Suite: TLS_DHE_DSS_WITH_SEED_CBC_SHA (0x0099) Cipher Suite: TLS_RSA_WITH_SEED_CBC_SHA (0x0096) Cipher Suite: TLS_DHE_RSA_WITH_DES_CBC_SHA (0x0015) Cipher Suite: TLS_DHE_DSS_WITH_DES_CBC_SHA (0x0012) Cipher Suite: TLS_RSA_WITH_DES_CBC_SHA (0x0009) Cipher Suite: TLS_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA (0x0014) Cipher Suite: TLS_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA (0x0011) Cipher Suite: TLS_RSA_EXPORT_WITH_DES40_CBC_SHA (0x0008) Cipher Suite: TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA (0xc012) Cipher Suite: TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA (0xc008) Cipher Suite: TLS_SRP_SHA_DSS_WITH_3DES_EDE_CBC_SHA (0xc01c) Cipher Suite: TLS_SRP_SHA_RSA_WITH_3DES_EDE_CBC_SHA (0xc01b) Cipher Suite: TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA (0x0016) Cipher Suite: TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA (0x0013) Cipher Suite: TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA (0xc00d) Cipher Suite: TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA (0xc003) Cipher Suite: TLS_RSA_WITH_3DES_EDE_CBC_SHA (0x000a) Cipher Suite: TLS_RSA_WITH_IDEA_CBC_SHA (0x0007) Cipher Suite: TLS_EMPTY_RENEGOTIATION_INFO_SCSV (0x00ff) I have updated my Interception Snort Rules to include this.</description>
     </item>
     
     <item>
@@ -223,11 +219,7 @@ Part of this involved traffic analysis to discover artifacts of the injection pr
       
       <guid>/2015/01/mitm-at-30000-feet/</guid>
       <description>In the past week I have seen a few mentions on twitter regarding Gogo Air presenting fake SSL certs for YouTube to users of their in air Internet access service:
-hey @Gogo, why are you issuing *.google.com certificates on your planes? pic.twitter.com/UmpIQ2pDaU
-&amp;mdash; Adrienne Porter Felt (@apf) January 2, 2015 
-
-No, not OK. @Gogo please justify breaking the Internet for your paying users. Huge privacy connotations! pic.twitter.com/AxZOPEK0oO
-&amp;mdash; Ben Hughes (@benjammingh) January 4, 2015</description>
+I started to wonder if they were using the same technique that I had recently been researching and discussing in my Corporation in The Middle talk. Luckily for me, my friend Benjammingh was one of those who noticed and was currently on a Gogo flight, so I asked him to take a packetdump for analysis.</description>
     </item>
     
     <item>
@@ -237,8 +229,7 @@ No, not OK. @Gogo please justify breaking the Internet for your paying users. Hu
       
       <guid>/2015/01/no-we-dont/</guid>
       <description>I just got a festive present from my ISP, Rogers.
-Following my recent talks regarding ISP packet injection/interception and data collection I wrote to the privacy officer at Rogers and asked, under PIPEDA, that I be supplied all information regarding my account, including any information that they have gathered such as URLs of sites visited, etc.
-I got a fairly standard response which said that they did not collect any such data, to which I replied: Hi,</description>
+Following my recent talks regarding ISP packet injection/interception and data collection I wrote to the privacy officer at Rogers and asked, under PIPEDA, that I be supplied all information regarding my account, including any information that they have gathered such as URLs of sites visited, etc. I got a fairly standard response which said that they did not collect any such data, to which I replied: Hi,</description>
     </item>
     
     <item>
@@ -247,9 +238,7 @@ I got a fairly standard response which said that they did not collect any such d
       <pubDate>Mon, 29 Dec 2014 00:00:00 +0000</pubDate>
       
       <guid>/2014/12/bsides-toronto-video-and-slides/</guid>
-      <description>At the end of November I gave my talk, &amp;ldquo;Corporation In The Middle [BSidesTO Edition]&amp;rdquo; at BSides Toronto 2014. The recording of the talk is now online and available here:
- You can play along at home with the slides, here:
-  Corporation In The Middle - BSidesTO Edition  from Lee Brotherston  </description>
+      <description>At the end of November I gave my talk, &amp;ldquo;Corporation In The Middle [BSidesTO Edition]&amp;rdquo; at BSides Toronto 2014. The recording of the talk is now online and available here:</description>
     </item>
     
     <item>
@@ -259,7 +248,7 @@ I got a fairly standard response which said that they did not collect any such d
       
       <guid>/2014/11/corporation-in-the-middle-blog-edition/</guid>
       <description>I recently gave a talk entitled Corporation In The Middle. This post is a summary for the benefit of people who don&amp;rsquo;t want to listen to the recording or try to make sense of my slides without the commentary.
-Background Towards the end of 2013 I noticed that my ISP was inserting banners into webpages to notify me when I consumed 75% or more of my monthly bandwidth allowance. Nothing suspicious you may think, it is after all a perfectly reasonable message to relay.</description>
+This post represents a technical(ish) summary of some of the key findings I made whilst investigating. If you would like a lengthier explanation, then you can listen to the recording from SecTor here.</description>
     </item>
     
     <item>
@@ -269,7 +258,7 @@ Background Towards the end of 2013 I noticed that my ISP was inserting banners i
       
       <guid>/2014/10/corporation-in-the-middle/</guid>
       <description>A few days ago I presented my talk, &amp;ldquo;Corporation In The Middle&amp;rdquo; at SecTor 2014. I will be presenting an updated and truncated version of the talk at BSides Toronto in November of this year.
-If you are interested in seeing the talk you can do so here:  If so inclined, you can also get the slides here. The original blurb was: My ISP deliberately MiTM&amp;rsquo;d my connection. This talk discusses how they did it, how I detected what they did and what this means.</description>
+If you are interested in seeing the talk you can do so here:</description>
     </item>
     
     <item>
@@ -279,9 +268,8 @@ If you are interested in seeing the talk you can do so here:  If so inclined, yo
       
       <guid>/2014/07/is-your-eula-lowering-your-application-security/</guid>
       <description>A couple of days ago I tweeted this:
- I&amp;#39;m pretty sure when your EULA prohibits reverse engineering your software, all you prevent is people telling you that they reversed it.
-&amp;mdash; leE Brotherston (@leEb_public) July 15, 2014  
-Quite a lot of people agreed (at the time of writing it has 40 retweets and 19 favourites, which is quite a lot for me), so I thought that I would expand and explain this in a little more detail.</description>
+Quite a lot of people agreed (at the time of writing it has 40 retweets and 19 favourites, which is quite a lot for me), so I thought that I would expand and explain this in a little more detail.
+The End User Licence Agreement (EULA) is something which is fairly common inclusion in commercial applications, and is typically something dreamed up by the legal team to attempt to enforce whatever it is that they feel needs to be added as part of the licencing agreement.</description>
     </item>
     
     <item>
